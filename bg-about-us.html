@@ -1,0 +1,529 @@
+--- START OF FILE about-us.html ---
+
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>
+        За нас - MyMiniSlot: Сърцето на Вълнението
+    </title>
+    <meta name="description"
+        content="Навлезте в света на MyMiniSlot: научете за нашата визия, страст и екипа, който стои зад революционната персонална слот машина. Открийте лукса на играта по ваши правила.">
+    <link href="all.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="image/ExperienceImage.webp" media="(max-width: 768px)" fetchpriority="high"
+        imagesizes="(max-width: 768px) 80vw, 300px">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@400;700&display=swap"
+        rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@400;700&display=swap"
+            rel="stylesheet">
+    </noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link href="styles/footer.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <style>
+        body {
+            background-color: rgba(30, 37, 47, 255) !important;
+            background-image: none !important;
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        /* Visibility classes for device showcase */
+        .mobile-only-device-showcase {
+            display: none;
+            /* Hidden by default */
+        }
+
+        .desktop-only-device-showcase {
+            display: flex;
+            /* Visible by default (as it was) */
+        }
+
+        .nav-indicator {
+            position: absolute;
+            bottom: -18%;
+            height: 2px;
+            background-color: white;
+            opacity: 1;
+            box-shadow:
+                0 0 5px rgba(255, 255, 255, 0.7),
+                0 0 10px rgba(255, 255, 255, 0.5);
+            width: 220px !important;
+            left: 70px;
+        }
+
+        .about-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            flex: 1;
+            box-sizing: border-box;
+            align-items: stretch;
+            min-height: calc(100vh - var(--header-height));
+        }
+
+        .about-content {
+            flex: 1;
+            padding-right: 60px;
+            max-width: 55%;
+            box-sizing: border-box;
+            margin-top: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .about-title {
+            font-family: 'Mont', sans-serif;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            margin-top: 10px;
+            font-weight: 700;
+            color: rgb(167, 167, 167);
+        }
+
+        .about-text {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            opacity: 0.9;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: space-between;
+        }
+
+        .about-text p {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .about-text p:last-child {
+            border-bottom: none;
+            margin-bottom: 50px;
+        }
+
+        .device-showcase {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 45%;
+            box-sizing: border-box;
+            margin-top: 150px;
+            align-self: stretch;
+            margin-left: 20px;
+            justify-content: flex-end;
+        }
+
+        .device-showcase img {
+            max-width: 180%;
+            height: auto;
+            object-fit: contain;
+            transform: scale(1.5) translateX(15px);
+            transition: transform 0.3s ease;
+            margin-right: -3%;
+        }
+
+        .bg-flag {
+            width: 30px;
+            height: auto;
+            margin-right: 7px;
+        }
+
+        .flag-label {
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        @media (min-width: 1600px) {
+            .about-container {
+                max-width: 1600px;
+            }
+
+            .about-title {
+                font-size: 3em;
+            }
+
+            .about-text {
+                font-size: 1.2em;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .about-container {
+                padding: 0 30px;
+            }
+
+            .about-content {
+                padding-right: 40px;
+            }
+
+            .about-title {
+                font-size: 2.2em;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .about-content {
+                max-width: 35%;
+            }
+
+            .device-showcase {
+                max-width: 65%;
+            }
+
+            .device-showcase img {
+                max-width: 185%;
+                transform: scale(1.4) translateX(15px);
+            }
+
+            .about-title {
+                font-size: 2em;
+            }
+
+            .about-text {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+                margin-top: 30px;
+                padding: 0 20px;
+                min-height: auto;
+            }
+
+            .desktop-only-device-showcase {
+                display: none;
+                /* Hide desktop version on mobile */
+            }
+
+            .mobile-only-device-showcase {
+                display: flex;
+                /* Show mobile version */
+                justify-content: center;
+                align-items: center;
+                margin: 20px 0;
+                /* Add some vertical spacing */
+            }
+
+            .mobile-only-device-showcase img {
+                max-width: 80%;
+                /* Adjust as needed, image shows it smaller */
+                height: auto;
+                transform: scale(1);
+                /* Reset any desktop scaling */
+            }
+
+            .about-content,
+            .device-showcase {
+                /* This now mainly refers to .desktop-only-device-showcase for non-mobile */
+                padding-right: 0;
+                margin-bottom: 40px;
+                max-width: 100%;
+            }
+
+            .about-content {
+                margin-top: 80px;
+            }
+
+            .device-showcase {
+                margin-top: 20px;
+                margin-bottom: 60px;
+                justify-content: center;
+            }
+
+            .desktop-only-device-showcase img {
+                /* Target specific instance */
+                max-width: 100%;
+                transform: scale(1) translateX(0);
+                margin-right: 0;
+                margin-left: 0;
+            }
+
+            .about-title {
+                font-size: 1.8em;
+                margin-bottom: 30px;
+            }
+        }
+
+        .header {
+            background-color: rgba(30, 37, 47, 255) !important;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu-blur-overlay">
+    </div>
+    <header class="header" id="main-header">
+        <div class="container">
+            <div class="logo-text">
+                MyMiniSlot
+            </div>
+            <nav class="nav" id="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            НАЧАЛО
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#craftsmanship">
+                            МАЙСТОРСТВОТО
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#experience">
+                            ИЗЖИВЯВАНЕТО
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#pre-order">
+                            ПРЕДВАРИТЕЛНА ПОРЪЧКА
+                        </a>
+                    </li>
+                </ul>
+                <div class="nav-indicator" id="indicator">
+                </div>
+            </nav>
+            <button aria-label="Превключване на мобилно меню" class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span class="hamburger">
+                </span>
+            </button>
+            <div class="header-line">
+            </div>
+        </div>
+    </header>
+    <main class="about-container">
+        <div class="about-content">
+            <h1 class="about-title">
+                За нас: Сърцето на MyMiniSlot
+            </h1>
+            <div class="about-text">
+                <p>
+                    В свят, пренаситен от дигитални екрани, MyMiniSlot се ражда от желанието да върнем истинското,
+                    осезаемо вълнение. Ние сме група ентусиасти, обединени от страстта към класическата игра,
+                    претворена в елегантно, лично устройство. MyMiniSlot не е просто машина – това е вашето персонално
+                    бягство, вашето притежание, което шепне за големи моменти.
+                </p>
+                <div class="mobile-only-device-showcase">
+                    <img alt="MyMiniSlot Устройство - Вашето лично забавление (мобилен изглед)" width="300" height="240"
+                        loading="eager" fetchpriority="high" decoding="async" src="image/ExperienceImage.webp">
+                </div>
+                <p>
+                    Нашата визия е да създадем нещо повече от играчка. Стремим се към съвършенство във всеки детайл –
+                    от първокласните материали до прецизното изпълнение и интуитивното изживяване. Искаме MyMiniSlot
+                    да бъде символ на стил и уникалност, предмет, който носи радост и тръпка във вашия личен свят,
+                    далеч от шума на казиното.
+                </p>
+                <p>
+                    Зад блясъка и механизма на MyMiniSlot стои екип от отдадени майстори, инженери и дизайнери. Ние
+                    сме обсебени от идеята да ви предоставим не просто продукт, а произведение на изкуството –
+                    компактно, мощно и изключително. Всяко MyMiniSlot устройство е създадено с внимание и любов,
+                    гарантирайки качество и надеждност, достойни за вашата колекция.
+                </p>
+            </div>
+        </div>
+        <!-- Device Showcase for Desktop -->
+        <div class="device-showcase desktop-only-device-showcase">
+            <img alt="MyMiniSlot Устройство - Символ на елегантност и тръпка (изглед за десктоп)" width="500"
+                height="400" loading="lazy" src="image/ExperienceImage.webp">
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <a href="about-us.html">
+                        За нас
+                    </a>
+                    <a href="/blog">
+                        Блог
+                    </a>
+                    <a href="support.html">
+                        Поддръжка
+                    </a>
+                </div>
+                <div class="footer-column">
+                    <a href="cookie-policy.html">
+                        Политика за бисквитките
+                    </a>
+                    <a href="privacy-policy.html">
+                        Политика за поверителност
+                    </a>
+                    <a href="responsible-gambling.html">
+                        Отговорна игра
+                    </a>
+                </div>
+                <div class="footer-column">
+                    <a href="/tech-specs">
+                        Спецификации
+                    </a>
+                    <a href="/commissions">
+                        Партньорство
+                    </a>
+                    <a href="/game-providers">
+                        Доставчици на игри
+                    </a>
+                </div>
+                <div class="footer-column language-and-social-group">
+                    <div class="language-selector">
+                        <img alt="Флаг на България" class="bg-flag" id="footer-flag" src="image/Flag_of_Bulgaria.svg">
+                        <span class="flag-label" id="footer-flag-label">
+                            Български
+                        </span>
+                        <select class="footer-language-dropdown" id="footer-language-dropdown"
+                            aria-label="Изберете език">
+                            <option data-flag="image/Flag_of_UK.svg" value="en">
+                                Английски
+                            </option>
+                            <option data-flag="image/Flag_of_Bulgaria.svg" value="bg">
+                                Български
+                            </option>
+                            <option data-flag="image/Flag_of_Germany.svg" value="de">
+                                Немски
+                            </option>
+                            <option data-flag="image/Flag_of_France.svg" value="fr">
+                                Френски
+                            </option>
+                            <option data-flag="image/Flag_of_Spain.svg" value="es">
+                                Испански
+                            </option>
+                            <option data-flag="image/Flag_of_Italy.svg" value="it">
+                                Италиански
+                            </option>
+                            <option data-flag="image/Flag_of_Russia.svg" value="ru">
+                                Руски
+                            </option>
+                            <option data-flag="image/Flag_of_Turkey.svg" value="tr">
+                                Турски
+                            </option>
+                            <option data-flag="image/Flag_of_India.svg" value="in">
+                                Индийски
+                            </option>
+                        </select>
+                    </div>
+                    <div class="social-icons-inline-container">
+                        <a href="#" aria-label="MyMiniSlot в Twitter X">
+                            <img alt="Икона на Twitter X" class="footer-social-img" src="image/Home (15).webp">
+                        </a>
+                        <a href="#" aria-label="MyMiniSlot в Instagram">
+                            <img alt="Икона на Instagram" class="footer-social-img" src="image/Home (16).webp">
+                        </a>
+                        <a href="#" aria-label="MyMiniSlot във Facebook">
+                            <img alt="Икона на Facebook" class="footer-social-img" src="image/Home (17).webp">
+                        </a>
+                        <a href="index.html" aria-label="MyMiniSlot в TikTok">
+                            <img alt="Икона на TikTok" class="footer-social-img" src="image/Home (18).webp">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-divider">
+        </div>
+        <div class="crypto-logos">
+            <img alt="Приемани криптовалути за MyMiniSlot" class="crypto-image"
+                src="image/footer-credits-removebg-preview.webp">
+        </div>
+        <footer class="site-footer-mobile">
+            <img alt="Приемани криптовалути и информация за отговорна игра (мобилен изглед)" class="mobile-footer-img"
+                src="image/mobile-footer.webp">
+        </footer>
+        <div class="footer-divider">
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-logo">
+                <div class="logo-text-footer">
+                    MyMiniSlot
+                </div>
+            </div>
+            <div class="copyright">
+                MyMiniSlot © <span id="current-year">2025</span>
+            </div>
+        </div>
+    </footer>
+    <script src="js/header.js" defer></script>
+    <script>
+        const yearSpan = document.getElementById('current-year');
+        if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const langDropdown = document.getElementById('footer-language-dropdown');
+            const flagImg = document.getElementById('footer-flag');
+            const flagLabel = document.getElementById('footer-flag-label');
+
+            // Initialize with Bulgarian (or selected default)
+            if (flagImg && flagLabel) {
+                const defaultLangValue = 'bg'; // Set Bulgarian as the default value
+                langDropdown.value = defaultLangValue;
+
+                const initialOption = langDropdown ? langDropdown.options[langDropdown.selectedIndex] : null;
+                if (initialOption) {
+                    const initialFlagPath = initialOption.getAttribute('data-flag');
+                    const initialLangName = initialOption.textContent.trim();
+                    flagImg.src = initialFlagPath || 'image/Flag_of_Bulgaria.svg'; // Fallback to BG flag
+                    flagImg.alt = (initialLangName || 'Български') + " Флаг";
+                    flagLabel.textContent = initialLangName || 'Български';
+                } else { // Fallback if dropdown not found or no option selected
+                    flagImg.src = 'image/Flag_of_Bulgaria.svg';
+                    flagImg.alt = "Флаг на България";
+                    flagLabel.textContent = 'Български';
+                }
+            }
+
+
+            if (langDropdown) {
+                langDropdown.addEventListener('change', function () {
+                    const selectedOption = langDropdown.options[langDropdown.selectedIndex];
+                    const flagPath = selectedOption.getAttribute('data-flag');
+                    const langName = selectedOption.textContent.trim();
+
+                    if (flagImg && flagPath) {
+                        flagImg.src = flagPath;
+                        flagImg.alt = langName + " Флаг";
+                    }
+                    if (flagLabel) {
+                        flagLabel.textContent = langName;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
