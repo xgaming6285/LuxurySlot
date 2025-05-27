@@ -231,69 +231,8 @@
             yearSpan.textContent = new Date().getFullYear();
         }
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const langDropdown = document.getElementById('footer-language-dropdown');
-            const flagImg = document.getElementById('footer-flag');
-            const flagLabel = document.getElementById('footer-flag-label');
-
-            // Initialize with English or detect browser language if needed
-            // For this example, we default to English in the HTML, then German via this translation.
-            // If you want to default to German for German users, you'd adjust the <option selected> in HTML or use JS detection.
-
-            const updateLanguageDisplay = () => {
-                const selectedOption = langDropdown.options[langDropdown.selectedIndex];
-                const flagPath = selectedOption.getAttribute('data-flag');
-                const langName = selectedOption.textContent.trim(); // Original language name from option text
-
-                // Map option values to German display names if needed for the label
-                let displayLangName = langName;
-                let displayFlagAlt = `${langName} Flagge`;
-
-                // This is an example for German. You would adjust based on the selected language.
-                // For simplicity, using the option's text content.
-                // However, for proper i18n, the label should also be translated.
-                // Example: If "fr" is selected, flagLabel.textContent should be "Französisch".
-
-                // For this specific case, we are translating the *page* to German.
-                // So, the initial state if 'en' is selected should be 'Englisch' in German.
-                const germanLanguageNames = {
-                    'en': 'Englisch',
-                    'bg': 'Bulgarisch',
-                    'de': 'Deutsch',
-                    'fr': 'Französisch',
-                    'es': 'Spanisch',
-                    'it': 'Italienisch',
-                    'ru': 'Russisch',
-                    'tr': 'Türkisch',
-                    'in': 'Hindi'
-                };
-
-                displayLangName = germanLanguageNames[selectedOption.value] || langName;
-                displayFlagAlt = `Flagge für ${displayLangName}`;
-
-
-                if (flagImg && flagPath) {
-                    flagImg.src = flagPath;
-                    flagImg.alt = displayFlagAlt;
-                }
-                if (flagLabel) {
-                    flagLabel.textContent = displayLangName;
-                }
-            };
-
-            if (langDropdown) {
-                // Set initial display based on the pre-selected option (which is English in the HTML structure)
-                updateLanguageDisplay();
-
-                langDropdown.addEventListener('change', updateLanguageDisplay);
-            } else if (flagImg && flagLabel) { // Fallback if dropdown somehow fails or is not present
-                flagImg.src = 'image/Flag_of_Germany.svg'; // Default to German flag for German page
-                flagImg.alt = "Deutsche Flagge";
-                flagLabel.textContent = 'Deutsch';
-            }
-        });
-    </script>
+    
+    <script src="js/language-selector.js" defer></script>
 </body>
 
 </html>

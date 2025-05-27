@@ -270,56 +270,8 @@
     </script>
     <script src="js/header.js">
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const langDropdown = document.getElementById('footer-language-dropdown');
-            const flagImg = document.getElementById('footer-flag');
-            const flagLabel = document.getElementById('footer-flag-label');
-
-            // Traduction des noms de langues pour l'initialisation et le changement
-            const languageNames = {
-                en: "English",
-                bg: "Български", // Bulgare
-                de: "Deutsch",   // Allemand
-                fr: "Français",
-                es: "Español",
-                it: "Italiano",
-                ru: "Русский",  // Russe
-                tr: "Türkçe",   // Turc
-                in: "हिन्दी"    // Hindi
-            };
-
-            function updateFlagAndLabel(langValue) {
-                const selectedOption = langDropdown.querySelector(`option[value="${langValue}"]`);
-                if (selectedOption && flagImg && flagLabel) {
-                    const flagPath = selectedOption.getAttribute('data-flag');
-                    const langName = languageNames[langValue] || languageNames['en']; // Fallback to English name
-
-                    flagImg.src = flagPath || 'image/Flag_of_UK.svg';
-                    flagImg.alt = (langName === "English" ? "Drapeau du Royaume-Uni" : `Drapeau ${langName}`); // Specific for UK, generic for others
-                    flagLabel.textContent = langName;
-                } else if (flagImg && flagLabel) { // Fallback if dropdown or option not found
-                    flagImg.src = 'image/Flag_of_UK.svg';
-                    flagImg.alt = "Drapeau du Royaume-Uni";
-                    flagLabel.textContent = languageNames['en'];
-                }
-            }
-
-            // Initialiser avec la langue sélectionnée (ou Anglais par défaut)
-            const initialLang = langDropdown ? langDropdown.value : 'en';
-            updateFlagAndLabel(initialLang);
-
-
-            if (langDropdown) {
-                langDropdown.value = 'fr'; // Mettre Français par défaut pour cette version
-                updateFlagAndLabel('fr'); // Mettre à jour le drapeau pour le Français
-
-                langDropdown.addEventListener('change', function () {
-                    updateFlagAndLabel(this.value);
-                });
-            }
-        });
-    </script>
+    
+    <script src="js/language-selector.js" defer></script>
 </body>
 
 </html>

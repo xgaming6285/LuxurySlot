@@ -248,46 +248,8 @@
             yearSpan.textContent = new Date().getFullYear();
         }
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const langDropdown = document.getElementById('footer-language-dropdown');
-            const flagImg = document.getElementById('footer-flag');
-            const flagLabel = document.getElementById('footer-flag-label');
-
-            // Initialize with Spanish as default if option exists
-            if (langDropdown && flagImg && flagLabel) {
-                const spanishOption = Array.from(langDropdown.options).find(option => option.value === 'es');
-                if (spanishOption) {
-                    langDropdown.value = 'es';
-                    flagImg.src = spanishOption.getAttribute('data-flag') || 'image/Flag_of_Spain.svg';
-                    flagImg.alt = "Bandera de España";
-                    flagLabel.textContent = 'Español';
-                } else {
-                    // Fallback to English if Spanish option is not found
-                    langDropdown.value = 'en';
-                    flagImg.src = 'image/Flag_of_UK.svg';
-                    flagImg.alt = "Bandera del Reino Unido";
-                    flagLabel.textContent = 'English';
-                }
-            }
-
-            if (langDropdown) {
-                langDropdown.addEventListener('change', function () {
-                    const selectedOption = langDropdown.options[langDropdown.selectedIndex];
-                    const flagPath = selectedOption.getAttribute('data-flag');
-                    const langName = selectedOption.textContent.trim();
-
-                    if (flagImg && flagPath) {
-                        flagImg.src = flagPath;
-                        flagImg.alt = langName + " Flag";
-                    }
-                    if (flagLabel) {
-                        flagLabel.textContent = langName;
-                    }
-                });
-            }
-        });
-    </script>
+    
+    <script src="js/language-selector.js" defer></script>
 </body>
 
 </html>

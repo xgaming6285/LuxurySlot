@@ -238,53 +238,8 @@
             yearSpan.textContent = new Date().getFullYear();
         }
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const langDropdown = document.getElementById('footer-language-dropdown');
-            const flagImg = document.getElementById('footer-flag');
-            const flagLabel = document.getElementById('footer-flag-label');
-
-            // Initialize with English (or detect browser language and set default)
-            // For this translation, let's explicitly set German as selected initially for demonstration
-            if (langDropdown) {
-                langDropdown.value = 'de'; // Set German as default selected
-            }
-
-
-            if (flagImg && flagLabel) {
-                // Update flag and label based on the initially selected German option
-                const initialOption = langDropdown ? langDropdown.options[langDropdown.selectedIndex] : null;
-                if (initialOption && initialOption.value === 'de') {
-                    const initialFlagPath = initialOption.getAttribute('data-flag');
-                    const initialLangName = initialOption.textContent.trim();
-                    flagImg.src = initialFlagPath || 'image/Flag_of_Germany.svg'; // Fallback to Germany flag
-                    flagImg.alt = (initialLangName || 'Deutsch') + " Flagge";
-                    flagLabel.textContent = initialLangName || 'Deutsch';
-                } else { // Fallback if German option not found or not selected
-                    flagImg.src = 'image/Flag_of_UK.svg'; // Default back to UK flag if German wasn't selected
-                    flagImg.alt = "UK Flagge";
-                    flagLabel.textContent = 'English'; // Default back to English label
-                }
-            }
-
-
-            if (langDropdown) {
-                langDropdown.addEventListener('change', function () {
-                    const selectedOption = langDropdown.options[langDropdown.selectedIndex];
-                    const flagPath = selectedOption.getAttribute('data-flag');
-                    const langName = selectedOption.textContent.trim();
-
-                    if (flagImg && flagPath) {
-                        flagImg.src = flagPath;
-                        flagImg.alt = langName + " Flagge";
-                    }
-                    if (flagLabel) {
-                        flagLabel.textContent = langName;
-                    }
-                });
-            }
-        });
-    </script>
+    
+    <script src="js/language-selector.js" defer></script>
 </body>
 
 </html>

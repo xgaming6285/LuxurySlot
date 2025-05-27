@@ -419,8 +419,8 @@
                             href="image/machine.png.webp" x="0" y="0" width="1000" height="1000" />
 
                         {/* */}
-                        <line id="line-high-res" class="animated-line" x1="60" y1="275" x2="470" y2="275"
-                            stroke="white" stroke-width="2" vector-effect="non-scaling-stroke" />
+                        <line id="line-high-res" class="animated-line" x1="60" y1="275" x2="470" y2="275" stroke="white"
+                            stroke-width="2" vector-effect="non-scaling-stroke" />
                         <circle id="circle-high-res" cx="470" cy="275" r="7" fill="white" /> {/* */}
 
                         {/* */}
@@ -569,8 +569,8 @@
                     class="provider-logo logo-helio" loading="lazy">
                 <img src="image/lightingBox (2).webp" alt="Lighting Box oyun sağlayıcısı logosu"
                     class="provider-logo logo-lightingBox" loading="lazy" width="180" height="60">
-                <img src="image/amusnet.webp" alt="Amusnet oyun sağlayıcısı logosu" class="provider-logo mobile-logo-large"
-                    loading="lazy" width="300" height="100">
+                <img src="image/amusnet.webp" alt="Amusnet oyun sağlayıcısı logosu"
+                    class="provider-logo mobile-logo-large" loading="lazy" width="300" height="100">
                 <img src="image/igt.png" alt="IGT oyun sağlayıcısı logosu" class="provider-logo logo-igt" loading="lazy"
                     width="150" height="60">
                 <img src="image/playTech.png" alt="Playtech oyun sağlayıcısı logosu" class="provider-logo logo-playtech"
@@ -583,8 +583,8 @@
                     class="provider-logo logo-evolution-slider" loading="lazy" width="120" height="60">
                 <img src="image/everyMatrix.webp" alt="EveryMatrix oyun sağlayıcısı logosu"
                     class="provider-logo logo-everyMatrix" loading="lazy" width="200" height="60">
-                <img src="image/nolimit.png" alt="Nolimit City oyun sağlayıcısı logosu" class="provider-logo logo-nolimit"
-                    loading="lazy" width="180" height="60">
+                <img src="image/nolimit.png" alt="Nolimit City oyun sağlayıcısı logosu"
+                    class="provider-logo logo-nolimit" loading="lazy" width="180" height="60">
             </div>
         </div>
 
@@ -675,7 +675,7 @@
                     </a>
                 </div>
                 <div class="footer-column">
-                    <a href="turk-cookie-policy.html">
+                    <a href="tr-cookie-policy.html">
                         Çerez Politikası
                     </a>
                     <a href="turk-privacy-policy.html">
@@ -703,8 +703,7 @@
                         <span class="flag-label" id="footer-flag-label">
                             English
                         </span>
-                        <select class="footer-language-dropdown" id="footer-language-dropdown"
-                            aria-label="Dil seçin">
+                        <select class="footer-language-dropdown" id="footer-language-dropdown" aria-label="Dil seçin">
                             <option data-flag="image/Flag_of_UK.svg" value="en">
                                 English
                             </option>
@@ -748,8 +747,8 @@
                                 src="image/Home (17).webp" width="24" height="24">
                         </a>
                         <a href="index.html" aria-label="MyMiniSlot TikTok'ta">
-                            <img alt="TikTok sosyal medya simgesi" class="footer-social-img"
-                                src="image/Home (18).webp" width="24" height="24">
+                            <img alt="TikTok sosyal medya simgesi" class="footer-social-img" src="image/Home (18).webp"
+                                width="24" height="24">
                         </a>
                     </div>
                 </div>
@@ -860,65 +859,7 @@
     <script src="js/header.js" defer></script>
     <script src="js/sliderEffect.js" defer></script>
     <script src="js/dropdownExperience.js" defer></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const langDropdown = document.getElementById('footer-language-dropdown');
-            const flagImg = document.getElementById('footer-flag');
-            const flagLabel = document.getElementById('footer-flag-label');
-            const langOptions = {
-                en: {
-                    flag: 'image/Flag_of_UK.svg', label: 'English'
-                },
-                bg: {
-                    flag: 'image/Flag_of_Bulgaria.svg', label: 'Български'
-                },
-                de: {
-                    flag: 'image/Flag_of_Germany.svg', label: 'Deutsch'
-                },
-                fr: {
-                    flag: 'image/Flag_of_France.svg', label: 'Français'
-                },
-                es: {
-                    flag: 'image/Flag_of_Spain.svg', label: 'Español'
-                },
-                it: {
-                    flag: 'image/Flag_of_Italy.svg', label: 'Italiano'
-                },
-                ru: {
-                    flag: 'image/Flag_of_Russia.svg', label: 'Русский'
-                },
-                tr: {
-                    flag: 'image/Flag_of_Turkey.svg', label: 'Türkçe'
-                },
-                in: {
-                    flag: 'image/Flag_of_India.svg', label: 'भारतीय'
-                }
-            };
-            // İngilizce ile başlat
-            if (flagImg && flagLabel && langOptions['en']) {
-                flagImg.src = langOptions['en'].flag;
-                flagImg.alt = "UK Bayrağı"; // Başlangıç bayrağı için alt metni ayarla
-                flagLabel.textContent = langOptions['en'].label;
-            }
-            if (langDropdown) {
-                langDropdown.value = 'en';
-                langDropdown.addEventListener('change', function () {
-                    const selectedLangValue = langDropdown.value;
-                    const selectedOption = langDropdown.options[langDropdown.selectedIndex];
-                    const flagPath = selectedOption.getAttribute('data-flag');
-                    const langName = selectedOption.textContent.trim();
 
-                    if (flagImg && flagPath) {
-                        flagImg.src = flagPath;
-                        flagImg.alt = langName + " Bayrağı"; // Alt metni güncelle
-                    }
-                    if (flagLabel) {
-                        flagLabel.textContent = langName;
-                    }
-                });
-            }
-        });
-    </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const imageContainers = document.querySelectorAll('.product-image-container');
@@ -1039,6 +980,7 @@
             });
         });
     </script>
+    <script src="js/language-selector.js" defer></script>
 </body>
 
 </html>

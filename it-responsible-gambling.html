@@ -209,46 +209,8 @@
             yearSpan.textContent = new Date().getFullYear();
         }
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const langDropdown = document.getElementById('footer-language-dropdown');
-            const flagImg = document.getElementById('footer-flag');
-            const flagLabel = document.getElementById('footer-flag-label');
-
-            // Initialize with Italian
-            if (flagImg && flagLabel) {
-                const initialOption = langDropdown ? langDropdown.options[langDropdown.selectedIndex] : null;
-                if (initialOption) {
-                    const initialFlagPath = initialOption.getAttribute('data-flag');
-                    const initialLangName = initialOption.textContent.trim();
-                    flagImg.src = initialFlagPath || 'image/Flag_of_Italy.svg';
-                    flagImg.alt = (initialLangName || 'Italiano') + " Bandiera";
-                    flagLabel.textContent = initialLangName || 'Italiano';
-                } else {
-                    flagImg.src = 'image/Flag_of_Italy.svg';
-                    flagImg.alt = "Bandiera dell'Italia";
-                    flagLabel.textContent = 'Italiano';
-                }
-            }
-
-            if (langDropdown) {
-                langDropdown.value = 'it'; // Ensure Italian is selected by default
-                langDropdown.addEventListener('change', function () {
-                    const selectedOption = langDropdown.options[langDropdown.selectedIndex];
-                    const flagPath = selectedOption.getAttribute('data-flag');
-                    const langName = selectedOption.textContent.trim();
-
-                    if (flagImg && flagPath) {
-                        flagImg.src = flagPath;
-                        flagImg.alt = langName + " Bandiera";
-                    }
-                    if (flagLabel) {
-                        flagLabel.textContent = langName;
-                    }
-                });
-            }
-        });
-    </script>
+    
+    <script src="js/language-selector.js" defer></script>
 </body>
 
 </html>

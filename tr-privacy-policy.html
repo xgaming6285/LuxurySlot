@@ -153,7 +153,7 @@
                     </a>
                 </div>
                 <div class="footer-column">
-                    <a href="turk-cookie-policy.html">
+                    <a href="tr-cookie-policy.html">
                         Çerez Politikası
                     </a>
                     <a href="turk-privacy-policy.html">
@@ -181,8 +181,7 @@
                         <span class="flag-label" id="footer-flag-label">
                             English
                         </span>
-                        <select class="footer-language-dropdown" id="footer-language-dropdown"
-                            aria-label="Dil seçin">
+                        <select class="footer-language-dropdown" id="footer-language-dropdown" aria-label="Dil seçin">
                             <option data-flag="image/Flag_of_UK.svg" value="en">
                                 English
                             </option>
@@ -226,8 +225,8 @@
                                 src="image/Home (17).webp" width="24" height="24">
                         </a>
                         <a href="index.html" aria-label="MyMiniSlot TikTok'ta">
-                            <img alt="TikTok sosyal medya simgesi" class="footer-social-img"
-                                src="image/Home (18).webp" width="24" height="24">
+                            <img alt="TikTok sosyal medya simgesi" class="footer-social-img" src="image/Home (18).webp"
+                                width="24" height="24">
                         </a>
                     </div>
                 </div>
@@ -264,46 +263,8 @@
     </script>
     <script src="js/header.js">
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const langDropdown = document.getElementById('footer-language-dropdown');
-            const flagImg = document.getElementById('footer-flag');
-            const flagLabel = document.getElementById('footer-flag-label');
 
-            // Initialize with English
-            if (flagImg && flagLabel) {
-                const initialOption = langDropdown ? langDropdown.options[langDropdown.selectedIndex] : null;
-                if (initialOption) {
-                    const initialFlagPath = initialOption.getAttribute('data-flag');
-                    const initialLangName = initialOption.textContent.trim();
-                    flagImg.src = initialFlagPath || 'image/Flag_of_UK.svg';
-                    flagImg.alt = (initialLangName || 'English') + " Flag";
-                    flagLabel.textContent = initialLangName || 'English';
-                } else { // Fallback if dropdown not found or no option selected
-                    flagImg.src = 'image/Flag_of_UK.svg';
-                    flagImg.alt = "UK Flag";
-                    flagLabel.textContent = 'English';
-                }
-            }
-
-            if (langDropdown) {
-                langDropdown.value = 'en'; // Ensure English is selected by default
-                langDropdown.addEventListener('change', function () {
-                    const selectedOption = langDropdown.options[langDropdown.selectedIndex];
-                    const flagPath = selectedOption.getAttribute('data-flag');
-                    const langName = selectedOption.textContent.trim();
-
-                    if (flagImg && flagPath) {
-                        flagImg.src = flagPath;
-                        flagImg.alt = langName + " Flag";
-                    }
-                    if (flagLabel) {
-                        flagLabel.textContent = langName;
-                    }
-                });
-            }
-        });
-    </script>
+    <script src="js/language-selector.js" defer></script>
 </body>
 
 </html>

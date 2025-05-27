@@ -487,61 +487,8 @@
             yearSpan.textContent = new Date().getFullYear();
         }
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const langDropdown = document.getElementById('footer-language-dropdown');
-            const flagImg = document.getElementById('footer-flag');
-            const flagLabel = document.getElementById('footer-flag-label');
-
-            // Initialize with English
-            if (flagImg && flagLabel) {
-                const initialOption = langDropdown ? langDropdown.options[langDropdown.selectedIndex] : null;
-                if (initialOption) {
-                    const initialFlagPath = initialOption.getAttribute('data-flag');
-                    const initialLangName = initialOption.textContent.trim();
-                    flagImg.src = initialFlagPath || 'image/Flag_of_UK.svg';
-                    flagImg.alt = (initialLangName || 'अंग्रेज़ी') + " झंडा";
-                    flagLabel.textContent = initialLangName || 'अंग्रेज़ी';
-
-                    // If current page lang is Hindi, select Hindi by default
-                    if (document.documentElement.lang === 'hi' && langDropdown) {
-                        const hindiOption = Array.from(langDropdown.options).find(opt => opt.value === 'in');
-                        if (hindiOption) {
-                            langDropdown.value = 'in';
-                            const hindiFlagPath = hindiOption.getAttribute('data-flag');
-                            const hindiLangName = hindiOption.textContent.trim();
-                            flagImg.src = hindiFlagPath || 'image/Flag_of_India.svg';
-                            flagImg.alt = hindiLangName + " झंडा";
-                            flagLabel.textContent = hindiLangName;
-                        }
-                    }
-
-                } else { // Fallback if dropdown not found or no option selected
-                    flagImg.src = 'image/Flag_of_UK.svg';
-                    flagImg.alt = "यूके का झंडा";
-                    flagLabel.textContent = 'अंग्रेज़ी';
-                }
-            }
-
-
-            if (langDropdown) {
-                // langDropdown.value = 'en'; // Ensure English is selected by default - modified above
-                langDropdown.addEventListener('change', function () {
-                    const selectedOption = langDropdown.options[langDropdown.selectedIndex];
-                    const flagPath = selectedOption.getAttribute('data-flag');
-                    const langName = selectedOption.textContent.trim();
-
-                    if (flagImg && flagPath) {
-                        flagImg.src = flagPath;
-                        flagImg.alt = langName + " झंडा";
-                    }
-                    if (flagLabel) {
-                        flagLabel.textContent = langName;
-                    }
-                });
-            }
-        });
-    </script>
+    
+    <script src="js/language-selector.js" defer></script>
 </body>
 
 </html>

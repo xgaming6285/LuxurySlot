@@ -198,51 +198,12 @@
     </footer>
     <script src="js/header.js">
     </script>
+    <script src="js/language-selector.js" defer></script>
     <script>
         const yearSpan = document.getElementById('current-year');
         if (yearSpan) {
             yearSpan.textContent = new Date().getFullYear();
         }
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const langDropdown = document.getElementById('footer-language-dropdown');
-            const flagImg = document.getElementById('footer-flag');
-            const flagLabel = document.getElementById('footer-flag-label');
-
-            // Initialize with English
-            if (flagImg && flagLabel) {
-                const initialOption = langDropdown ? langDropdown.options[langDropdown.selectedIndex] : null;
-                if (initialOption) {
-                    const initialFlagPath = initialOption.getAttribute('data-flag');
-                    const initialLangName = initialOption.textContent.trim();
-                    flagImg.src = initialFlagPath || 'image/Flag_of_UK.svg';
-                    flagImg.alt = (initialLangName || 'English') + " Flag";
-                    flagLabel.textContent = initialLangName || 'English';
-                } else { // Fallback if dropdown not found or no option selected
-                    flagImg.src = 'image/Flag_of_UK.svg';
-                    flagImg.alt = "UK Flag";
-                    flagLabel.textContent = 'English';
-                }
-            }
-
-            if (langDropdown) {
-                langDropdown.value = 'en'; // Ensure English is selected by default
-                langDropdown.addEventListener('change', function () {
-                    const selectedOption = langDropdown.options[langDropdown.selectedIndex];
-                    const flagPath = selectedOption.getAttribute('data-flag');
-                    const langName = selectedOption.textContent.trim();
-
-                    if (flagImg && flagPath) {
-                        flagImg.src = flagPath;
-                        flagImg.alt = langName + " Flag";
-                    }
-                    if (flagLabel) {
-                        flagLabel.textContent = langName;
-                    }
-                });
-            }
-        });
     </script>
 </body>
 

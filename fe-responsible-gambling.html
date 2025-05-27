@@ -210,62 +210,8 @@
             yearSpan.textContent = new Date().getFullYear();
         }
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const langDropdown = document.getElementById('footer-language-dropdown');
-            const flagImg = document.getElementById('footer-flag');
-            const flagLabel = document.getElementById('footer-flag-label');
-
-            // Fonction pour mettre à jour le drapeau et le libellé
-            function updateLanguageDisplay(selectedOption) {
-                const flagPath = selectedOption.getAttribute('data-flag');
-                let langName = selectedOption.textContent.trim();
-                // Pour le français, utilisons le nom français plutôt que l'entité HTML
-                if (selectedOption.value === 'fr') langName = 'Français';
-
-
-                if (flagImg && flagPath) {
-                    flagImg.src = flagPath;
-                    flagImg.alt = "Drapeau " + langName;
-                }
-                if (flagLabel) {
-                    flagLabel.textContent = langName;
-                }
-            }
-
-            // Initialiser avec la langue par défaut (Anglais) ou la langue du navigateur si c'est 'fr'
-            // Ou si la page est explicitement en français via <html lang="fr">
-            let defaultLangValue = 'en';
-            if (document.documentElement.lang === 'fr') {
-                defaultLangValue = 'fr';
-            }
-
-            if (langDropdown) {
-                const initialOption = langDropdown.querySelector(`option[value="${defaultLangValue}"]`) || langDropdown.options[0];
-                langDropdown.value = initialOption.value; // Définir la valeur sélectionnée
-                updateLanguageDisplay(initialOption); // Mettre à jour l'affichage
-
-                langDropdown.addEventListener('change', function () {
-                    const selectedOption = langDropdown.options[langDropdown.selectedIndex];
-                    updateLanguageDisplay(selectedOption);
-                    // Ici, vous pourriez ajouter une logique pour changer réellement la langue du site
-                    // par exemple, recharger la page avec un paramètre de langue ou charger des traductions dynamiquement.
-                    // Pour l'instant, cela ne fait que changer l'affichage du sélecteur.
-                });
-            } else if (flagImg && flagLabel) { // Fallback si le dropdown n'existe pas mais les éléments d'affichage oui
-                // Afficher le français par défaut si la page est en français
-                if (document.documentElement.lang === 'fr') {
-                    flagImg.src = 'image/Flag_of_France.svg';
-                    flagImg.alt = "Drapeau Français";
-                    flagLabel.textContent = 'Français';
-                } else {
-                    flagImg.src = 'image/Flag_of_UK.svg';
-                    flagImg.alt = "Drapeau du Royaume-Uni";
-                    flagLabel.textContent = 'English';
-                }
-            }
-        });
-    </script>
+    
+    <script src="js/language-selector.js" defer></script>
 </body>
 
 </html>

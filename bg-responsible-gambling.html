@@ -225,58 +225,8 @@
             yearSpan.textContent = new Date().getFullYear();
         }
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const langDropdown = document.getElementById('footer-language-dropdown');
-            const flagImg = document.getElementById('footer-flag');
-            const flagLabel = document.getElementById('footer-flag-label');
-                    // Initialize with English (or preferred default if different)
-            if (flagImg && flagLabel) {
-                // Find the Bulgarian option and set it as initial
-                const bulgarianOption = Array.from(langDropdown.options).find(option => option.value === 'bg');
-                if (bulgarianOption) {
-                    const initialFlagPath = bulgarianOption.getAttribute('data-flag');
-                    const initialLangName = bulgarianOption.textContent.trim();
-                    flagImg.src = initialFlagPath || 'image/Flag_of_Bulgaria.svg'; // Default to BG flag
-                    flagImg.alt = (initialLangName || 'Български') + " Флаг";
-                    flagLabel.textContent = initialLangName || 'Български';
-                    langDropdown.value = 'bg'; // Ensure Bulgarian is selected
-                } else { // Fallback if BG option not found
-                    const initialOption = langDropdown ? langDropdown.options[langDropdown.selectedIndex] : null;
-                    if (initialOption) {
-                        const initialFlagPath = initialOption.getAttribute('data-flag');
-                        const initialLangName = initialOption.textContent.trim();
-                        flagImg.src = initialFlagPath || 'image/Flag_of_UK.svg';
-                        flagImg.alt = (initialLangName || 'Английски') + " Флаг";
-                        flagLabel.textContent = initialLangName || 'Английски';
-                    } else {
-                        flagImg.src = 'image/Flag_of_UK.svg';
-                        flagImg.alt = "Флаг на Великобритания";
-                        flagLabel.textContent = 'Английски';
-                    }
-                }
-            }
-
-
-            if (langDropdown) {
-                langDropdown.addEventListener('change', function () {
-                    const selectedOption = langDropdown.options[langDropdown.selectedIndex];
-                    const flagPath = selectedOption.getAttribute('data-flag');
-                    const langName = selectedOption.textContent.trim();
-
-                    if (flagImg && flagPath) {
-                        flagImg.src = flagPath;
-                        flagImg.alt = langName + " Флаг";
-                    }
-                    if (flagLabel) {
-                        flagLabel.textContent = langName;
-                    }
-                    // Note: This script only changes the displayed flag/label.
-                    // Actual language change requires backend or more complex JS.
-                });
-            }
-        });
-                    </script>
-                    </body>
+    
+                        <script src="js/language-selector.js" defer></script>
+</body>
                     
                     </html>

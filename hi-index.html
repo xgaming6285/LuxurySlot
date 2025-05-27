@@ -869,67 +869,7 @@
                                                 <script src="js/header.js" defer></script>
                                                 <script src="js/sliderEffect.js" defer></script>
                                                 <script src="js/dropdownExperience.js" defer></script>
-                                                <script>
-                                                    document.addEventListener('DOMContentLoaded', function () {
-                                                        const langDropdown = document.getElementById('footer-language-dropdown');
-                                                        const flagImg = document.getElementById('footer-flag');
-                                                        const flagLabel = document.getElementById('footer-flag-label');
-                                                        const langOptions = {
-                                                            en: {
-                                                                flag: 'image/Flag_of_UK.svg', label: 'English', alt: 'UK Flag'
-                                                            },
-                                                            bg: {
-                                                                flag: 'image/Flag_of_Bulgaria.svg', label: 'बल्गेरियाई', alt: 'बल्गेरियाई झंडा'
-                                                            },
-                                                            de: {
-                                                                flag: 'image/Flag_of_Germany.svg', label: 'जर्मन', alt: 'जर्मन झंडा'
-                                                            },
-                                                            fr: {
-                                                                flag: 'image/Flag_of_France.svg', label: 'फ्रेंच', alt: 'फ्रेंच झंडा'
-                                                            },
-                                                            es: {
-                                                                flag: 'image/Flag_of_Spain.svg', label: 'स्पेनिश', alt: 'स्पेनिश झंडा'
-                                                            },
-                                                            it: {
-                                                                flag: 'image/Flag_of_Italy.svg', label: 'इतालवी', alt: 'इतालवी झंडा'
-                                                            },
-                                                            ru: {
-                                                                flag: 'image/Flag_of_Russia.svg', label: 'रूसी', alt: 'रूसी झंडा'
-                                                            },
-                                                            tr: {
-                                                                flag: 'image/Flag_of_Turkey.svg', label: 'तुर्की', alt: 'तुर्की झंडा'
-                                                            },
-                                                            in: {
-                                                                flag: 'image/Flag_of_India.svg', label: 'भारतीय', alt: 'भारतीय झंडा'
-                                                            }
-                                                        };
-                                                        // Initialize with English
-                                                        if (flagImg && flagLabel && langOptions['en']) {
-                                                            flagImg.src = langOptions['en'].flag;
-                                                            flagImg.alt = langOptions['en'].alt; // Set alt text for initial flag
-                                                            flagLabel.textContent = langOptions['en'].label;
-                                                        }
-                                                        if (langDropdown) {
-                                                            langDropdown.value = 'en';
-                                                            langDropdown.addEventListener('change', function () {
-                                                                const selectedLangValue = langDropdown.value;
-                                                                const selectedOption = langDropdown.options[langDropdown.selectedIndex];
-                                                                const flagPath = selectedOption.getAttribute('data-flag');
-                                                                const langName = selectedOption.textContent.trim();
-                                                                const langAlt = langOptions[selectedLangValue] ? langOptions[selectedLangValue].alt : langName + " Flag";
-
-
-                                                                if (flagImg && flagPath) {
-                                                                    flagImg.src = flagPath;
-                                                                    flagImg.alt = langAlt; // Update alt text
-                                                                }
-                                                                if (flagLabel) {
-                                                                    flagLabel.textContent = langName;
-                                                                }
-                                                            });
-                                                        }
-                                                    });
-                                                </script>
+                                                
                                                 <script>
                                                     document.addEventListener('DOMContentLoaded', () => {
                                                         const imageContainers = document.querySelectorAll('.product-image-container');
@@ -1050,6 +990,7 @@
                                                         });
                                                     });
                                                 </script>
-                                                </body>
+                                                    <script src="js/language-selector.js" defer></script>
+</body>
                                                 
                                                 </html>

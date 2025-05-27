@@ -481,49 +481,8 @@
             yearSpan.textContent = new Date().getFullYear();
         }
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const langDropdown = document.getElementById('footer-language-dropdown');
-            const flagImg = document.getElementById('footer-flag');
-            const flagLabel = document.getElementById('footer-flag-label');
-
-            // Initialize with Bulgarian (or selected default)
-            if (flagImg && flagLabel) {
-                const defaultLangValue = 'bg'; // Set Bulgarian as the default value
-                langDropdown.value = defaultLangValue;
-
-                const initialOption = langDropdown ? langDropdown.options[langDropdown.selectedIndex] : null;
-                if (initialOption) {
-                    const initialFlagPath = initialOption.getAttribute('data-flag');
-                    const initialLangName = initialOption.textContent.trim();
-                    flagImg.src = initialFlagPath || 'image/Flag_of_Bulgaria.svg'; // Fallback to BG flag
-                    flagImg.alt = (initialLangName || 'Български') + " Флаг";
-                    flagLabel.textContent = initialLangName || 'Български';
-                } else { // Fallback if dropdown not found or no option selected
-                    flagImg.src = 'image/Flag_of_Bulgaria.svg';
-                    flagImg.alt = "Флаг на България";
-                    flagLabel.textContent = 'Български';
-                }
-            }
-
-
-            if (langDropdown) {
-                langDropdown.addEventListener('change', function () {
-                    const selectedOption = langDropdown.options[langDropdown.selectedIndex];
-                    const flagPath = selectedOption.getAttribute('data-flag');
-                    const langName = selectedOption.textContent.trim();
-
-                    if (flagImg && flagPath) {
-                        flagImg.src = flagPath;
-                        flagImg.alt = langName + " Флаг";
-                    }
-                    if (flagLabel) {
-                        flagLabel.textContent = langName;
-                    }
-                });
-            }
-        });
-    </script>
+    
+    <script src="js/language-selector.js" defer></script>
 </body>
 
 </html>

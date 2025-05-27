@@ -205,57 +205,8 @@
             yearSpan.textContent = new Date().getFullYear();
         }
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const langDropdown = document.getElementById('footer-language-dropdown');
-            const flagImg = document.getElementById('footer-flag');
-            const flagLabel = document.getElementById('footer-flag-label');
-
-            // Initialize with English (or Hindi if you prefer default)
-            // For this example, let's assume English is still the visual default until changed
-            let initialLangValue = 'en';
-            let initialLangText = 'अंग्रेज़ी';
-            let initialFlagSrc = 'image/Flag_of_UK.svg';
-
-            // If you want Hindi to be the default displayed language from the start:
-            // initialLangValue = 'in';
-            // initialLangText = 'भारतीय'; // Or 'हिन्दी'
-            // initialFlagSrc = 'image/Flag_of_India.svg';
-
-
-            if (flagImg && flagLabel) {
-                const initialOption = langDropdown ? langDropdown.querySelector(`option[value="${initialLangValue}"]`) : null;
-                if (initialOption) {
-                    const initialFlagPath = initialOption.getAttribute('data-flag');
-                    const initialLangName = initialOption.textContent.trim();
-                    flagImg.src = initialFlagPath || initialFlagSrc;
-                    flagImg.alt = (initialLangName || initialLangText) + " झंडा";
-                    flagLabel.textContent = initialLangName || initialLangText;
-                } else { // Fallback
-                    flagImg.src = initialFlagSrc;
-                    flagImg.alt = initialLangText + " झंडा";
-                    flagLabel.textContent = initialLangText;
-                }
-            }
-
-            if (langDropdown) {
-                langDropdown.value = initialLangValue;
-                langDropdown.addEventListener('change', function () {
-                    const selectedOption = langDropdown.options[langDropdown.selectedIndex];
-                    const flagPath = selectedOption.getAttribute('data-flag');
-                    const langName = selectedOption.textContent.trim();
-
-                    if (flagImg && flagPath) {
-                        flagImg.src = flagPath;
-                        flagImg.alt = langName + " झंडा";
-                    }
-                    if (flagLabel) {
-                        flagLabel.textContent = langName;
-                    }
-                });
-            }
-        });
-    </script>
+    
+    <script src="js/language-selector.js" defer></script>
 </body>
 
 </html>

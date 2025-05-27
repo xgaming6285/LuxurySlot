@@ -479,44 +479,8 @@
             yearSpan.textContent = new Date().getFullYear();
         }
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const langDropdown = document.getElementById('footer-language-dropdown');
-            const flagImg = document.getElementById('footer-flag');
-            const flagLabel = document.getElementById('footer-flag-label');
-
-            if (langDropdown && flagImg && flagLabel) {
-                const turkishOption = Array.from(langDropdown.options).find(option => option.value === 'tr');
-                if (turkishOption) {
-                    langDropdown.value = 'tr';
-                    flagImg.src = turkishOption.getAttribute('data-flag') || 'image/Flag_of_Turkey.svg';
-                    flagImg.alt = "Türk Bayrağı";
-                    flagLabel.textContent = 'Türkçe';
-                } else {
-                    langDropdown.value = 'en';
-                    flagImg.src = 'image/Flag_of_UK.svg';
-                    flagImg.alt = "İngiliz Bayrağı";
-                    flagLabel.textContent = 'English';
-                }
-            }
-
-            if (langDropdown) {
-                langDropdown.addEventListener('change', function () {
-                    const selectedOption = langDropdown.options[langDropdown.selectedIndex];
-                    const flagPath = selectedOption.getAttribute('data-flag');
-                    const langName = selectedOption.textContent.trim();
-
-                    if (flagImg && flagPath) {
-                        flagImg.src = flagPath;
-                        flagImg.alt = langName + " Bayrağı";
-                    }
-                    if (flagLabel) {
-                        flagLabel.textContent = langName;
-                    }
-                });
-            }
-        });
-    </script>
+    
+    <script src="js/language-selector.js" defer></script>
 </body>
 
 </html>

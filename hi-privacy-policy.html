@@ -252,72 +252,8 @@
     </script>
     <script src="js/header.js">
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const langDropdown = document.getElementById('footer-language-dropdown');
-            const flagImg = document.getElementById('footer-flag');
-            const flagLabel = document.getElementById('footer-flag-label');
-
-            // Initialize with English or default
-            if (flagImg && flagLabel) {
-                const initialOption = langDropdown ? langDropdown.options[langDropdown.selectedIndex] : null;
-                if (initialOption) {
-                    const initialFlagPath = initialOption.getAttribute('data-flag');
-                    const initialLangName = initialOption.textContent.trim();
-                    flagImg.src = initialFlagPath || 'image/Flag_of_UK.svg';
-                    flagImg.alt = (initialLangName || 'अंग्रेज़ी') + " ध्वज"; // Translated 'Flag'
-                    flagLabel.textContent = initialLangName || 'अंग्रेज़ी'; // Translated 'English'
-                } else { // Fallback
-                    flagImg.src = 'image/Flag_of_UK.svg';
-                    flagImg.alt = "यूके ध्वज"; // Translated 'UK Flag'
-                    flagLabel.textContent = 'अंग्रेज़ी'; // Translated 'English'
-                }
-            }
-
-            if (langDropdown) {
-                // Set default selected language based on HTML lang attribute or keep English
-                // For this example, we'll keep English as default if 'hi' isn't explicitly set in options.
-                // But if the page lang is 'hi', ideally the dropdown should reflect that.
-                // For simplicity, we'll ensure 'en' is selected if 'hi' is not present or handled.
-                let foundHi = false;
-                for (let i = 0; i < langDropdown.options.length; i++) {
-                    if (langDropdown.options[i].value === 'in') { // Assuming 'in' is for Hindi
-                        // If you want Hindi to be default, uncomment next line
-                        // langDropdown.value = 'in'; 
-                        foundHi = true;
-                        break;
-                    }
-                }
-                if (!foundHi || langDropdown.value !== 'in') { // If Hindi not set or not found
-                    langDropdown.value = 'en'; // Default to English
-                }
-                // Update flag and label based on the potentially changed dropdown value
-                const selectedOptionOnInit = langDropdown.options[langDropdown.selectedIndex];
-                if (selectedOptionOnInit && flagImg && flagLabel) {
-                    const flagPathOnInit = selectedOptionOnInit.getAttribute('data-flag');
-                    const langNameOnInit = selectedOptionOnInit.textContent.trim();
-                    flagImg.src = flagPathOnInit;
-                    flagImg.alt = langNameOnInit + " ध्वज";
-                    flagLabel.textContent = langNameOnInit;
-                }
-
-
-                langDropdown.addEventListener('change', function () {
-                    const selectedOption = langDropdown.options[langDropdown.selectedIndex];
-                    const flagPath = selectedOption.getAttribute('data-flag');
-                    const langName = selectedOption.textContent.trim();
-
-                    if (flagImg && flagPath) {
-                        flagImg.src = flagPath;
-                        flagImg.alt = langName + " ध्वज"; // Translated 'Flag'
-                    }
-                    if (flagLabel) {
-                        flagLabel.textContent = langName;
-                    }
-                });
-            }
-        });
-    </script>
+    
+    <script src="js/language-selector.js" defer></script>
 </body>
 
 </html>

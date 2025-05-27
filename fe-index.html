@@ -879,57 +879,7 @@
     <script src="js/header.js" defer></script>
     <script src="js/sliderEffect.js" defer></script>
     <script src="js/dropdownExperience.js" defer></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const langDropdown = document.getElementById('footer-language-dropdown');
-            const flagImg = document.getElementById('footer-flag');
-            const flagLabel = document.getElementById('footer-flag-label');
-            // Keep the language option texts as they are, they represent the language name
-            // Update only the flag and label based on selection
-            const langOptions = {
-                en: { flag: 'image/Flag_of_UK.svg', label: 'English', alt: 'UK Flag' },
-                bg: { flag: 'image/Flag_of_Bulgaria.svg', label: 'Български', alt: 'Bulgaria Flag' },
-                de: { flag: 'image/Flag_of_Germany.svg', label: 'Deutsch', alt: 'Germany Flag' },
-                fr: { flag: 'image/Flag_of_France.svg', label: 'Français', alt: 'France Flag' }, // Added French
-                es: { flag: 'image/Flag_of_Spain.svg', label: 'Español', alt: 'Spain Flag' },
-                it: { flag: 'image/Flag_of_Italy.svg', label: 'Italiano', alt: 'Italy Flag' },
-                ru: { flag: 'image/Flag_of_Russia.svg', label: 'Русский', alt: 'Russia Flag' },
-                tr: { flag: 'image/Flag_of_Turkey.svg', label: 'Türkçe', alt: 'Turkey Flag' },
-                in: { flag: 'image/Flag_of_India.svg', label: 'भारतीय', alt: 'India Flag' }
-            };
-
-            // Initialize with French
-            const initialLang = 'fr'; // Set initial language to French
-            if (flagImg && flagLabel && langOptions[initialLang]) {
-                flagImg.src = langOptions[initialLang].flag;
-                flagImg.alt = langOptions[initialLang].alt;
-                flagLabel.textContent = langOptions[initialLang].label;
-                langDropdown.value = initialLang; // Set dropdown value
-            }
-
-
-            if (langDropdown) {
-
-                langDropdown.addEventListener('change', function () {
-                    const selectedLangValue = langDropdown.value;
-                    const selectedOption = langDropdown.options[langDropdown.selectedIndex];
-                    const flagPath = selectedOption.getAttribute('data-flag');
-                    // Use the language name for the label and alt text lookup
-                    const langKey = selectedLangValue; // Use value as key
-
-                    if (langOptions[langKey]) {
-                        if (flagImg && flagPath) {
-                            flagImg.src = flagPath;
-                            flagImg.alt = langOptions[langKey].alt; // Update alt text
-                        }
-                        if (flagLabel) {
-                            flagLabel.textContent = langOptions[langKey].label; // Update label
-                        }
-                    }
-                });
-            }
-        });
-    </script>
+    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const imageContainers = document.querySelectorAll('.product-image-container');
@@ -1050,6 +1000,7 @@
             });
         });
     </script>
+    <script src="js/language-selector.js" defer></script>
 </body>
 
 </html>

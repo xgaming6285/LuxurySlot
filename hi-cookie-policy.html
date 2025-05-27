@@ -228,61 +228,8 @@
             yearSpan.textContent = new Date().getFullYear();
         }
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const langDropdown = document.getElementById('footer-language-dropdown');
-            const flagImg = document.getElementById('footer-flag');
-            const flagLabel = document.getElementById('footer-flag-label');
-
-            // Initialize with English (or Hindi if you prefer as default for this version)
-            // Let's keep English as the JS default, but the displayed HTML is Hindi
-            if (flagImg && flagLabel) {
-                const initialOption = langDropdown ? langDropdown.options[langDropdown.selectedIndex] : null;
-                if (initialOption) {
-                    const initialFlagPath = initialOption.getAttribute('data-flag');
-                    // The initial textContent will be "अंग्रेज़ी" from the HTML.
-                    // We need to ensure the JS respects this if 'en' is selected.
-                    // For this example, we assume the HTML defines the initial state correctly.
-                    const initialLangName = initialOption.textContent.trim();
-                    flagImg.src = initialFlagPath || 'image/Flag_of_UK.svg';
-                    flagImg.alt = (initialLangName || 'अंग्रेज़ी') + " झंडा";
-                    flagLabel.textContent = initialLangName || 'अंग्रेज़ी';
-                } else {
-                    flagImg.src = 'image/Flag_of_UK.svg'; // Fallback
-                    flagImg.alt = "यूके झंडा";
-                    flagLabel.textContent = 'अंग्रेज़ी';
-                }
-            }
-
-            if (langDropdown) {
-                // If you want Hindi to be pre-selected by JS:
-                // langDropdown.value = 'in'; 
-                // const hindiOption = langDropdown.querySelector('option[value="in"]');
-                // if (hindiOption) {
-                //    flagImg.src = hindiOption.getAttribute('data-flag');
-                //    flagImg.alt = hindiOption.textContent.trim() + " झंडा";
-                //    flagLabel.textContent = hindiOption.textContent.trim();
-                // }
-                // For now, let's assume 'en' is the JS default and HTML provides the Hindi text
-                // which will be updated on actual selection.
-                langDropdown.value = 'en'; // Default JS value
-
-                langDropdown.addEventListener('change', function () {
-                    const selectedOption = langDropdown.options[langDropdown.selectedIndex];
-                    const flagPath = selectedOption.getAttribute('data-flag');
-                    const langName = selectedOption.textContent.trim();
-
-                    if (flagImg && flagPath) {
-                        flagImg.src = flagPath;
-                        flagImg.alt = langName + " झंडा";
-                    }
-                    if (flagLabel) {
-                        flagLabel.textContent = langName;
-                    }
-                });
-            }
-        });
-    </script>
+    
+    <script src="js/language-selector.js" defer></script>
 </body>
 
 </html>

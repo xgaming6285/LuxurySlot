@@ -256,57 +256,8 @@
     </script>
     <script src="js/header.js">
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const langDropdown = document.getElementById('footer-language-dropdown');
-            const flagImg = document.getElementById('footer-flag');
-            const flagLabel = document.getElementById('footer-flag-label');
-
-            // Initialize with English
-            // (The default is already set to English in HTML, script below handles change)
-            // This script part focuses on ensuring the initially selected option reflects correctly
-            // If the page loads with Bulgarian (lang="bg") and you want Bulgarian default, 
-            // you'd need to adjust the selected option in HTML or here.
-            // For now, it respects the 'en' selected value.
-
-            const updateFlagAndLabel = () => {
-                if (langDropdown && flagImg && flagLabel) {
-                    const selectedOption = langDropdown.options[langDropdown.selectedIndex];
-                    if (selectedOption) {
-                        const flagPath = selectedOption.getAttribute('data-flag');
-                        const langName = selectedOption.textContent.trim();
-                        flagImg.src = flagPath || 'image/Flag_of_UK.svg'; // Fallback to UK flag
-                        flagImg.alt = (langName || 'Английски') + " флаг";
-                        flagLabel.textContent = langName || 'Английски';
-                    }
-                }
-            };
-
-            // Initial setup if the dropdown has a pre-selected value (e.g. 'en' by default)
-            updateFlagAndLabel();
-
-
-            if (langDropdown) {
-                // Ensure 'bg' is selected if the page lang is 'bg'
-                // However, your provided HTML hardcodes English as selected, so this might be overridden
-                // by user interaction or if you want to dynamically set it based on html lang attribute.
-                // For this exercise, we'll let the HTML's "selected" attribute for 'en' take precedence initially
-                // and then let user interaction drive changes.
-                // If you wanted to force it to Bulgarian on page load (if lang="bg"):
-                // if (document.documentElement.lang === 'bg') {
-                //    langDropdown.value = 'bg';
-                //    updateFlagAndLabel();
-                // }
-
-
-                langDropdown.addEventListener('change', function () {
-                    updateFlagAndLabel();
-                    // Add logic here if you need to reload the page or change content based on language
-                    // For example: window.location.href = '?lang=' + this.value;
-                });
-            }
-        });
-    </script>
+    
+    <script src="js/language-selector.js" defer></script>
 </body>
 
 </html>

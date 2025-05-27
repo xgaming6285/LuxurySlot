@@ -225,60 +225,8 @@
             yearSpan.textContent = new Date().getFullYear();
         }
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const langDropdown = document.getElementById('footer-language-dropdown');
-            const flagImg = document.getElementById('footer-flag');
-            const flagLabel = document.getElementById('footer-flag-label');
-
-            // अंग्रेज़ी के साथ शुरू करें
-            if (flagImg && flagLabel) {
-                const initialOption = langDropdown ? langDropdown.options[langDropdown.selectedIndex] : null;
-                if (initialOption) {
-                    const initialFlagPath = initialOption.getAttribute('data-flag');
-                    let initialLangName = initialOption.textContent.trim();
-                    if (initialOption.value === 'en') initialLangName = "English (अंग्रेज़ी)"; // विशिष्टता के लिए
-                    flagImg.src = initialFlagPath || 'image/Flag_of_UK.svg';
-                    flagImg.alt = (initialLangName || 'English (अंग्रेज़ी)') + " झंडा";
-                    flagLabel.textContent = initialLangName || 'English (अंग्रेज़ी)';
-                } else { // यदि ड्रॉपडाउन नहीं मिला या कोई विकल्प चयनित नहीं है
-                    flagImg.src = 'image/Flag_of_UK.svg';
-                    flagImg.alt = "यूके का झंडा";
-                    flagLabel.textContent = 'English (अंग्रेज़ी)';
-                }
-            }
-
-            if (langDropdown) {
-                langDropdown.value = 'en'; // सुनिश्चित करें कि डिफ़ॉल्ट रूप से अंग्रेज़ी चयनित हो
-                langDropdown.addEventListener('change', function () {
-                    const selectedOption = langDropdown.options[langDropdown.selectedIndex];
-                    const flagPath = selectedOption.getAttribute('data-flag');
-                    let langName = selectedOption.textContent.trim();
-
-                    // भाषा के नाम को अधिक वर्णनात्मक बनाने के लिए परिशोधित करें
-                    const langValue = selectedOption.value;
-                    if (langValue === 'en') langName = "English (अंग्रेज़ी)";
-                    else if (langValue === 'bg') langName = "български (बल्गेरियाई)";
-                    else if (langValue === 'de') langName = "Deutsch (जर्मन)";
-                    else if (langValue === 'fr') langName = "Français (फ़्रेंच)";
-                    else if (langValue === 'es') langName = "Español (स्पेनिश)";
-                    else if (langValue === 'it') langName = "Italiano (इतालवी)";
-                    else if (langValue === 'ru') langName = "Русский (रूसी)";
-                    else if (langValue === 'tr') langName = "Türkçe (तुर्की)";
-                    else if (langValue === 'in') langName = "भारतीय (हिन्दी)";
-                    // आप यहाँ और भाषाओं के लिए जोड़ सकते हैं
-
-                    if (flagImg && flagPath) {
-                        flagImg.src = flagPath;
-                        flagImg.alt = langName + " झंडा";
-                    }
-                    if (flagLabel) {
-                        flagLabel.textContent = langName;
-                    }
-                });
-            }
-        });
-    </script>
+    
+    <script src="js/language-selector.js" defer></script>
 </body>
 
 </html>
