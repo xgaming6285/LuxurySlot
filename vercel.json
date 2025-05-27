@@ -1,0 +1,51 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "**/*",
+            "use": "@vercel/static"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/about-us",
+            "dest": "/about-us.html"
+        },
+        {
+            "src": "/support",
+            "dest": "/support.html"
+        },
+        {
+            "src": "/responsible-gambling",
+            "dest": "/responsible-gambling.html"
+        },
+        {
+            "src": "/privacy-policy",
+            "dest": "/privacy-policy.html"
+        },
+        {
+            "src": "/cookie-policy",
+            "dest": "/cookie-policy.html"
+        },
+        {
+            "src": "/(.*)\\.html",
+            "dest": "/$1.html"
+        },
+        {
+            "src": "/js/(.*)",
+            "dest": "/js/$1"
+        },
+        {
+            "src": "/styles/(.*)",
+            "dest": "/styles/$1"
+        },
+        {
+            "src": "/image/(.*)",
+            "dest": "/image/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/$1"
+        }
+    ]
+}

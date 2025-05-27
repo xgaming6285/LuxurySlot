@@ -1,0 +1,365 @@
+.content-container h1,
+body {
+    font-family: Montserrat, sans-serif
+}
+
+body {
+    background-color: #1e252f !important;
+    background-image: none !important;
+    background-attachment: fixed;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+    overflow-x: visible
+}
+
+.header {
+    background-color: transparent
+}
+
+.cookie-policy .nav-indicator {
+    position: absolute;
+    bottom: -18%;
+    height: 2px;
+    background-color: #fff;
+    opacity: 1;
+    box-shadow: 0 0 5px rgba(255, 255, 255, .7), 0 0 10px rgba(255, 255, 255, .5);
+    width: 220px !important;
+    left: 70px
+}
+
+.cookie-policy-content {
+    display: flex;
+    max-width: 1200px;
+    margin: 8% auto 5%;
+    padding: 0 1%;
+    position: relative;
+    overflow: visible
+}
+
+.cookie-policy-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0
+}
+
+.content-container h1 {
+    position: relative;
+    top: -30px;
+    right: auto;
+    text-align: right;
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: -30px;
+    z-index: 100;
+    pointer-events: auto;
+    text-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    padding: 10px 15px;
+    border-radius: 3px
+}
+
+@media (min-width:1200px) {
+    .content-container h1 {
+        position: relative;
+        top: -60px;
+        right: auto;
+        text-align: right;
+        font-family: Montserrat, sans-serif;
+        color: #fff;
+        font-size: 1.8rem;
+        margin-bottom: -40px;
+        z-index: 100;
+        pointer-events: auto;
+        text-shadow: 0 0 5px rgba(0, 0, 0, .5);
+        padding: 10px 15px;
+        border-radius: 3px
+    }
+}
+
+.coin {
+    position: absolute;
+    top: -100px;
+    left: -580px;
+    width: 1400px;
+    height: auto;
+    object-fit: contain;
+    z-index: 0;
+    transition: .3s
+}
+
+.content-container {
+    flex: 1;
+    padding-top: 30px;
+    position: relative
+}
+
+.text-columns {
+    display: flex;
+    position: relative;
+    margin-top: 0;
+    gap: 0;
+    left: auto;
+    width: 65%;
+    float: right;
+    padding: 0 1%
+}
+
+.text-columns::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #fff;
+    transform: translateX(-50%)
+}
+
+.column {
+    flex: 1;
+    padding: 0
+}
+
+.left-column {
+    text-align: right;
+    padding-right: 30px
+}
+
+.right-column {
+    text-align: right;
+    padding-left: 30px
+}
+
+.column p {
+    margin-bottom: 30px;
+    font-size: .8rem;
+    line-height: 1.6;
+    color: silver;
+    font-weight: 700;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto
+}
+
+.column p:last-child {
+    margin-bottom: 0
+}
+
+@media (max-width:768px) {
+    .coin {
+        transform-origin: center;
+        width: 350px;
+        max-width: 100%;
+        top: 0;
+        margin-left: 0;
+        transform: scale(1.2);
+        transform-origin: center
+    }
+
+    .content-container h1 {
+        position: relative;
+        text-align: center;
+        top: auto;
+        right: auto;
+        margin-top: 2px;
+        margin-bottom: 30px;
+        font-size: 1.3rem;
+        width: 100%;
+        background-color: rgba(30, 37, 47, .8);
+        padding: 10px 0
+    }
+
+    .cookie-policy-content {
+        flex-direction: column;
+        margin-top: 100px
+    }
+
+    .text-columns {
+        flex-direction: column
+    }
+
+    .text-columns::before {
+        width: 100%;
+        height: 1px;
+        left: 0;
+        top: 50%;
+        transform: none
+    }
+
+    .left-column,
+    .right-column {
+        text-align: right;
+        padding: 0 15px
+    }
+
+    .left-column {
+        margin-bottom: 30px
+    }
+}
+
+@media (max-width:1024px) and (min-width:769px) {
+    .cookie-policy-content {
+        padding: 0 1%
+    }
+
+    .coin {
+        width: 1000px;
+        left: -420px;
+        top: -60px;
+        clip-path: inset(0 0 0 420px)
+    }
+
+    .content-container h1 {
+        font-size: 1.6rem
+    }
+
+    .text-columns {
+        width: 60%
+    }
+
+    .column p {
+        font-size: .75rem
+    }
+}
+
+@media (max-width:768px) {
+
+    .coin,
+    .content-container h1 {
+        position: relative;
+        display: block
+    }
+
+    .cookie-policy-content {
+        flex-direction: column;
+        margin-top: 80px;
+        overflow: visible
+    }
+
+    .coin {
+        width: 650px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 20px;
+        opacity: 1;
+        clip-path: none
+    }
+
+    .content-container h1 {
+        text-align: center;
+        top: auto;
+        right: auto;
+        margin-bottom: 30px;
+        font-size: 1.5rem;
+        width: 100%;
+        padding: 10px 0;
+        pointer-events: auto;
+        margin-top: -20px
+    }
+
+    .text-columns {
+        flex-direction: column;
+        left: auto;
+        right: auto;
+        width: 100%;
+        float: none;
+        margin-top: 30px
+    }
+
+    .text-columns::before {
+        width: 100%;
+        height: 1px;
+        left: 0;
+        top: 50%;
+        transform: none
+    }
+
+    .left-column,
+    .right-column {
+        text-align: right;
+        padding: 0 15px
+    }
+
+    .left-column {
+        margin-bottom: 30px
+    }
+
+    .cookie-policy .nav-indicator {
+        width: 160px !important;
+        left: 50px
+    }
+}
+
+@media (max-width:900px) and (min-width:769px) {
+    .coin {
+        width: 1000px;
+        left: -380px;
+        top: -20px;
+        opacity: 1;
+        display: block;
+        clip-path: inset(0 0 0 42px)
+    }
+}
+
+@media (max-width:480px) {
+
+    .coin,
+    .content-container h1 {
+        position: relative;
+        display: block
+    }
+
+    .cookie-policy-content {
+        margin-top: 60px
+    }
+
+    .coin {
+        width: 400px;
+        top: 10px;
+        opacity: 1;
+        clip-path: none
+    }
+
+    .content-container {
+        padding-top: 20px
+    }
+
+    .content-container h1 {
+        top: auto;
+        font-size: 1.4rem;
+        padding: 8px 15px;
+        margin-top: 20px;
+        text-align: center;
+        width: auto
+    }
+
+    .column p {
+        font-size: .8rem
+    }
+
+    .left-column,
+    .right-column {
+        padding: 0 10px;
+        text-align: right
+    }
+
+    .cookie-policy .nav-indicator {
+        width: 140px !important;
+        left: 40px
+    }
+}
+
+@media (max-width:1024px) and (min-width:901px) {
+    .coin {
+        width: 1000px;
+        left: -300px;
+        top: -60px;
+        clip-path: inset(0 0 0 42px)
+    }
+}
