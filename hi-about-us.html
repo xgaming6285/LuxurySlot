@@ -1,0 +1,547 @@
+--- START OF FILE about-us.html ---
+
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>
+        हमारे बारे में - मायमिनीस्लॉट
+    </title>
+    <meta name="description"
+        content="मायमिनीस्लॉट के बारे में और जानें, हमारा मिशन, और इस क्रांतिकारी व्यक्तिगत स्लॉट मशीन के पीछे की टीम की दिलकश कहानी।">
+    <link href="all.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="image/ExperienceImage.webp" media="(max-width: 768px)" fetchpriority="high"
+        imagesizes="(max-width: 768px) 80vw, 300px">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@400;700&display=swap"
+        rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@400;700&display=swap"
+            rel="stylesheet">
+    </noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link href="styles/footer.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <style>
+        body {
+            background-color: rgba(30, 37, 47, 255) !important;
+            background-image: none !important;
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        /* Visibility classes for device showcase */
+        .mobile-only-device-showcase {
+            display: none;
+            /* Hidden by default */
+        }
+
+        .desktop-only-device-showcase {
+            display: flex;
+            /* Visible by default (as it was) */
+        }
+
+        .nav-indicator {
+            position: absolute;
+            bottom: -18%;
+            height: 2px;
+            background-color: white;
+            opacity: 1;
+            box-shadow:
+                0 0 5px rgba(255, 255, 255, 0.7),
+                0 0 10px rgba(255, 255, 255, 0.5);
+            width: 220px !important;
+            left: 70px;
+        }
+
+        .about-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            flex: 1;
+            box-sizing: border-box;
+            align-items: stretch;
+            min-height: calc(100vh - var(--header-height));
+        }
+
+        .about-content {
+            flex: 1;
+            padding-right: 60px;
+            max-width: 55%;
+            box-sizing: border-box;
+            margin-top: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .about-title {
+            font-family: 'Mont', sans-serif;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            margin-top: 10px;
+            font-weight: 700;
+            color: rgb(167, 167, 167);
+        }
+
+        .about-text {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            opacity: 0.9;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: space-between;
+        }
+
+        .about-text p {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .about-text p:last-child {
+            border-bottom: none;
+            margin-bottom: 50px;
+        }
+
+        .device-showcase {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 45%;
+            box-sizing: border-box;
+            margin-top: 150px;
+            align-self: stretch;
+            margin-left: 20px;
+            justify-content: flex-end;
+        }
+
+        .device-showcase img {
+            max-width: 180%;
+            height: auto;
+            object-fit: contain;
+            transform: scale(1.5) translateX(15px);
+            transition: transform 0.3s ease;
+            margin-right: -3%;
+        }
+
+        .bg-flag {
+            width: 30px;
+            height: auto;
+            margin-right: 7px;
+        }
+
+        .flag-label {
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        @media (min-width: 1600px) {
+            .about-container {
+                max-width: 1600px;
+            }
+
+            .about-title {
+                font-size: 3em;
+            }
+
+            .about-text {
+                font-size: 1.2em;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .about-container {
+                padding: 0 30px;
+            }
+
+            .about-content {
+                padding-right: 40px;
+            }
+
+            .about-title {
+                font-size: 2.2em;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .about-content {
+                max-width: 35%;
+            }
+
+            .device-showcase {
+                max-width: 65%;
+            }
+
+            .device-showcase img {
+                max-width: 185%;
+                transform: scale(1.4) translateX(15px);
+            }
+
+            .about-title {
+                font-size: 2em;
+            }
+
+            .about-text {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+                margin-top: 30px;
+                padding: 0 20px;
+                min-height: auto;
+            }
+
+            .desktop-only-device-showcase {
+                display: none;
+                /* Hide desktop version on mobile */
+            }
+
+            .mobile-only-device-showcase {
+                display: flex;
+                /* Show mobile version */
+                justify-content: center;
+                align-items: center;
+                margin: 20px 0;
+                /* Add some vertical spacing */
+            }
+
+            .mobile-only-device-showcase img {
+                max-width: 80%;
+                /* Adjust as needed, image shows it smaller */
+                height: auto;
+                transform: scale(1);
+                /* Reset any desktop scaling */
+            }
+
+            .about-content,
+            .device-showcase {
+                /* This now mainly refers to .desktop-only-device-showcase for non-mobile */
+                padding-right: 0;
+                margin-bottom: 40px;
+                max-width: 100%;
+            }
+
+            .about-content {
+                margin-top: 80px;
+            }
+
+            .device-showcase {
+                margin-top: 20px;
+                margin-bottom: 60px;
+                justify-content: center;
+            }
+
+            .desktop-only-device-showcase img {
+                /* Target specific instance */
+                max-width: 100%;
+                transform: scale(1) translateX(0);
+                margin-right: 0;
+                margin-left: 0;
+            }
+
+            .about-title {
+                font-size: 1.8em;
+                margin-bottom: 30px;
+            }
+        }
+
+        .header {
+            background-color: rgba(30, 37, 47, 255) !important;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu-blur-overlay">
+    </div>
+    <header class="header" id="main-header">
+        <div class="container">
+            <div class="logo-text">
+                मायमिनीस्लॉट
+            </div>
+            <nav class="nav" id="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            होम
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#craftsmanship">
+                            शिल्प कौशल
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#experience">
+                            अनुभव
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#pre-order">
+                            प्री-ऑर्डर करें
+                        </a>
+                    </li>
+                </ul>
+                <div class="nav-indicator" id="indicator">
+                </div>
+            </nav>
+            <button aria-label="मोबाइल मेनू टॉगल करें" class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span class="hamburger">
+                </span>
+            </button>
+            <div class="header-line">
+            </div>
+        </div>
+    </header>
+    <main class="about-container">
+        <div class="about-content">
+            <h1 class="about-title">
+                हमारी कहानी
+            </h1>
+            <div class="about-text">
+                <p>
+                    हम मायमिनीस्लॉट हैं, सिर्फ एक कंपनी नहीं, बल्कि आपके निजी रोमांच और किस्मत के खेल को एक नया, मादक
+                    अंदाज़ देने वाले जादूगर। हम वो हैं जो सपनों को हकीकत में बदलते हैं, और हर स्पिन में उत्साह भर देते
+                    हैं। हमारी यात्रा उस चिंगारी से शुरू हुई, जब हमने महसूस किया कि असली मज़ा तब है जब वो सिर्फ आपका हो,
+                    आपकी उंगलियों पर नाचे!
+                </p>
+                <div class="mobile-only-device-showcase">
+                    <img alt="मायमिनीस्लॉट डिवाइस का जलवा (अबाउट अस पेज के लिए मोबाइल व्यू)" width="300" height="240"
+                        loading="eager" fetchpriority="high" decoding="async" src="image/ExperienceImage.webp">
+                </div>
+                <p>
+                    कल्पना कीजिए एक ऐसी दुनिया की, जहाँ कैसीनो का हर रोमांच, हर धड़कन बढ़ाने वाला अनुभव, सिर्फ आपके लिए,
+                    आपके हाथों में सिमट आए। मायमिनीस्लॉट इसी कल्पना को साकार करता है – एक निजी, शानदार और बेहद आकर्षक
+                    स्लॉट मशीन, जो सिर्फ आपकी है। यह सिर्फ एक मशीन नहीं, यह आपकी अपनी किस्मत की चाबी है, आपका अपना छोटा
+                    सा वेगास!
+                </p>
+                <p>
+                    हमारा जुनून? आपकी बोरियत को दूर भगाना और आपकी ज़िंदगी में थोड़ी शरारत, थोड़ा ग्लैमर और ढेर सारा मज़ा
+                    लाना। हर डिटेल को प्यार से तराशा गया है ताकि जब आप मायमिनीस्लॉट का अनुभव करें, तो वो सिर्फ एक गेम न
+                    हो, बल्कि एक जश्न हो! हमारी टीम में सपने देखने वाले, डिज़ाइनर और टेक्नोलॉजी के जादूगर शामिल हैं, जो
+                    आपके लिए कुछ खास बनाने के लिए दिन-रात एक करते हैं।
+                </p>
+                <p>
+                    तो आइए, इस रोमांचक सफर का हिस्सा बनिए। अपनी किस्मत के सितारे चमकाइए और हर पल को यादगार बनाइए।
+                    मायमिनीस्लॉट के साथ, हर दिन एक नई पार्टी है, और आप ही उसके स्टार हैं! यह सिर्फ शुरुआत है, हमारे साथ
+                    जुड़िए और देखिए कैसे हम आपके मनोरंजन की दुनिया को हमेशा के लिए बदल देते हैं।
+                </p>
+            </div>
+        </div>
+        <!-- Device Showcase for Desktop -->
+        <div class="device-showcase desktop-only-device-showcase">
+            <img alt="मायमिनीस्लॉट डिवाइस का शानदार दृश्य (अबाउट अस पेज के लिए डेस्कटॉप व्यू)" width="500" height="400"
+                loading="lazy" src="image/ExperienceImage.webp">
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <a href="about-us.html">
+                        हमारे बारे में
+                    </a>
+                    <a href="/blog">
+                        ब्लॉग
+                    </a>
+                    <a href="support.html">
+                        सहायता
+                    </a>
+                </div>
+                <div class="footer-column">
+                    <a href="cookie-policy.html">
+                        कुकी नीति
+                    </a>
+                    <a href="privacy-policy.html">
+                        गोपनीयता नीति
+                    </a>
+                    <a href="responsible-gambling.html">
+                        ज़िम्मेदार गेमिंग
+                    </a>
+                </div>
+                <div class="footer-column">
+                    <a href="/tech-specs">
+                        तकनीकी विवरण
+                    </a>
+                    <a href="/commissions">
+                        कमीशन
+                    </a>
+                    <a href="/game-providers">
+                        गेम प्रदाता
+                    </a>
+                </div>
+                <div class="footer-column language-and-social-group">
+                    <div class="language-selector">
+                        <img alt="यूके का झंडा" class="uk-flag" id="footer-flag" src="image/Flag_of_UK.svg">
+                        <span class="flag-label" id="footer-flag-label">
+                            अंग्रेज़ी
+                        </span>
+                        <select class="footer-language-dropdown" id="footer-language-dropdown" aria-label="भाषा चुनें">
+                            <option data-flag="image/Flag_of_UK.svg" value="en">
+                                अंग्रेज़ी
+                            </option>
+                            <option data-flag="image/Flag_of_Bulgaria.svg" value="bg">
+                                बल्गेरियाई
+                            </option>
+                            <option data-flag="image/Flag_of_Germany.svg" value="de">
+                                जर्मन
+                            </option>
+                            <option data-flag="image/Flag_of_France.svg" value="fr">
+                                फ़्रांसीसी
+                            </option>
+                            <option data-flag="image/Flag_of_Spain.svg" value="es">
+                                स्पेनी
+                            </option>
+                            <option data-flag="image/Flag_of_Italy.svg" value="it">
+                                इतालवी
+                            </option>
+                            <option data-flag="image/Flag_of_Russia.svg" value="ru">
+                                रूसी
+                            </option>
+                            <option data-flag="image/Flag_of_Turkey.svg" value="tr">
+                                तुर्की
+                            </option>
+                            <option data-flag="image/Flag_of_India.svg" value="in">
+                                हिन्दी
+                            </option>
+                        </select>
+                    </div>
+                    <div class="social-icons-inline-container">
+                        <a href="#" aria-label="ट्विटर एक्स पर मायमिनीस्लॉट">
+                            <img alt="ट्विटर एक्स सोशल मीडिया आइकन" class="footer-social-img"
+                                src="image/Home (15).webp">
+                        </a>
+                        <a href="#" aria-label="इंस्टाग्राम पर मायमिनीस्लॉट">
+                            <img alt="इंस्टाग्राम सोशल मीडिया आइकन" class="footer-social-img"
+                                src="image/Home (16).webp">
+                        </a>
+                        <a href="#" aria-label="फेसबुक पर मायमिनीस्लॉट">
+                            <img alt="फेसबुक सोशल मीडिया आइकन" class="footer-social-img" src="image/Home (17).webp">
+                        </a>
+                        <a href="index.html" aria-label="टिकटॉक पर मायमिनीस्लॉट">
+                            <img alt="टिकटॉक सोशल मीडिया आइकन" class="footer-social-img" src="image/Home (18).webp">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-divider">
+        </div>
+        <div class="crypto-logos">
+            <img alt="मायमिनीस्लॉट के लिए स्वीकृत क्रिप्टोकरेंसीज़" class="crypto-image"
+                src="image/footer-credits-removebg-preview.webp">
+        </div>
+        <footer class="site-footer-mobile">
+            <img alt="स्वीकृत क्रिप्टोकरेंसीज़ और ज़िम्मेदार गेमिंग जानकारी (मोबाइल के लिए)" class="mobile-footer-img"
+                src="image/mobile-footer.webp">
+        </footer>
+        <div class="footer-divider">
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-logo">
+                <div class="logo-text-footer">
+                    मायमिनीस्लॉट
+                </div>
+            </div>
+            <div class="copyright">
+                मायमिनीस्लॉट © <span id="current-year">2025</span>
+            </div>
+        </div>
+    </footer>
+    <script src="js/header.js" defer></script>
+    <script>
+        const yearSpan = document.getElementById('current-year');
+        if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const langDropdown = document.getElementById('footer-language-dropdown');
+            const flagImg = document.getElementById('footer-flag');
+            const flagLabel = document.getElementById('footer-flag-label');
+
+            // Initialize with English
+            if (flagImg && flagLabel) {
+                const initialOption = langDropdown ? langDropdown.options[langDropdown.selectedIndex] : null;
+                if (initialOption) {
+                    const initialFlagPath = initialOption.getAttribute('data-flag');
+                    const initialLangName = initialOption.textContent.trim();
+                    flagImg.src = initialFlagPath || 'image/Flag_of_UK.svg';
+                    flagImg.alt = (initialLangName || 'अंग्रेज़ी') + " झंडा";
+                    flagLabel.textContent = initialLangName || 'अंग्रेज़ी';
+
+                    // If current page lang is Hindi, select Hindi by default
+                    if (document.documentElement.lang === 'hi' && langDropdown) {
+                        const hindiOption = Array.from(langDropdown.options).find(opt => opt.value === 'in');
+                        if (hindiOption) {
+                            langDropdown.value = 'in';
+                            const hindiFlagPath = hindiOption.getAttribute('data-flag');
+                            const hindiLangName = hindiOption.textContent.trim();
+                            flagImg.src = hindiFlagPath || 'image/Flag_of_India.svg';
+                            flagImg.alt = hindiLangName + " झंडा";
+                            flagLabel.textContent = hindiLangName;
+                        }
+                    }
+
+                } else { // Fallback if dropdown not found or no option selected
+                    flagImg.src = 'image/Flag_of_UK.svg';
+                    flagImg.alt = "यूके का झंडा";
+                    flagLabel.textContent = 'अंग्रेज़ी';
+                }
+            }
+
+
+            if (langDropdown) {
+                // langDropdown.value = 'en'; // Ensure English is selected by default - modified above
+                langDropdown.addEventListener('change', function () {
+                    const selectedOption = langDropdown.options[langDropdown.selectedIndex];
+                    const flagPath = selectedOption.getAttribute('data-flag');
+                    const langName = selectedOption.textContent.trim();
+
+                    if (flagImg && flagPath) {
+                        flagImg.src = flagPath;
+                        flagImg.alt = langName + " झंडा";
+                    }
+                    if (flagLabel) {
+                        flagLabel.textContent = langName;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
