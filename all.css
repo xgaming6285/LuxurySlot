@@ -714,7 +714,6 @@ html {
         font-size: 4.5em;
         text-wrap: wrap;
         line-height: 1.2;
-        margin-left: -25%;
         overflow-wrap: break-word;
     }
 }
@@ -1515,6 +1514,7 @@ section#experience .logo-pragmatic {
         text-wrap: wrap;
         line-height: 1.2;
         overflow-wrap: break-word;
+        left: 0%;
     }
 
     .hero-text {
