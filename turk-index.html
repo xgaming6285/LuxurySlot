@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="preload" as="image" href="image/homePageImage_4.webp" media="(max-width: 768px)" fetchpriority="high"
+        imagesrcset="image/homePageImage_4.webp 1200w" imagesizes="(max-width: 444px) 90vw, 400px">
+    <link rel="preload" as="image" href="image/homePageImage_4.webp" media="(min-width: 769px)" fetchpriority="high"
+        imagesizes="1200px" imagesrcset="image/homePageImage_4.webp 1200w">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600;700&family=Dancing+Script:wght@600&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'" fetchpriority="high">
+
+    <title>
+        MyMiniSlot - Metalden Dövülmüş Kişisel Vegasınız
+    </title>
+    <meta name="description"
+        content="MyMiniSlot'u keşfedin, metalden dövülmüş kişisel slot makinenizi. İşçiliğini keşfedin, binlerce oyunu deneyimleyin ve bugün sizinkini ön sipariş verin.">
+
+    <style>
+        html,
+        body {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            /* İlk başta yedek yazı tipi kullanılacaktır */
+            color: white;
+            margin: 0;
+            padding: 0;
+            background-image: url('image/backgroundMainPage.jpg');
+            /* Çok büyük ve ATF için hayati ise bunu ön yüklemeyi düşünün */
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            /* Bu mobil cihazlarda maliyetli olabilir, performansı test edin */
+            min-height: 100vh;
+            font-weight: 200;
+        }
+
+        :root {
+            --header-height: 80px;
+            --black: #000;
+            --white: #fff;
+            --gray-100: #f7f7f7;
+            --gray-200: #e9e9e9;
+            --gray-300: #d4d4d4;
+            --gray-400: #a3a3a3;
+            --gray-500: #737373;
+            --gray-800: #262626;
+            --transition-timing: cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-padding-top: var(--header-height);
+            /* Yumuşak kaydırma JS/kullanıcı tercihidir, boyama için kritik değildir */
+        }
+
+        /* Başlık */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--header-height);
+            background-color: rgba(0, 0, 0, 0.5);
+            /* backdrop-filter: blur(10px); -- Ertele: performans yoğun olabilir */
+            color: var(--white);
+            z-index: 500;
+            contain: layout style;
+            /* Performans için iyi */
+        }
+
+        .header .container {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            position: relative;
+            padding: 0;
+            /* Mobil tarafından geçersiz kılınır */
+            width: 100%;
+            max-width: 100%;
+            /* justify-content: space-between; -- Mobil tarafından geçersiz kılınır */
+        }
+
+        .logo-text {
+            font-family: 'Dancing Script', 'cursive';
+            font-weight: 600;
+            font-size: 2.5rem;
+            /* Mobil görünüm için ayarlandı - farklıysa gerçek mobil boyut için all.css'i kontrol edin */
+            color: #e0e0e0;
+            flex-shrink: 0;
+            /* mobil spesifikte margin/padding ayarlanacaktır */
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            /* Varsayılan, mobil @media'da gösterilir */
+            background: none;
+            border: none;
+            color: var(--white);
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 501;
+            /* Gerekirse diğer başlık içeriğinin üzerinde olduğundan emin olun */
+        }
+
+        .hamburger {
+            display: block;
+            position: relative;
+            width: 24px;
+            height: 2px;
+            background-color: var(--white);
+        }
+
+        .hamburger::before,
+        .hamburger::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            background-color: var(--white);
+        }
+
+        .hamburger::before {
+            top: -6px;
+            right: 0px;
+        }
+
+        .hamburger::after {
+            bottom: -6px;
+            right: 0px;
+        }
+
+        /* Kahraman Bölümü (LCP Kapsayıcı) */
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
+            /* Veya tam görünüm yüksekliği değilse belirli bir yükseklik */
+            padding-top: var(--header-height);
+            /* Sabit başlık için */
+            position: relative;
+            /* Z-endeks yığınlaması için gerekirse */
+            overflow: hidden;
+            /* İçerik taşabilirse */
+        }
+
+        .hero-text {
+            z-index: 10;
+            /* Diğer kahraman öğelerinin üzerinde olması gerekiyorsa */
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-family: 'Montserrat', Arial, sans-serif;
+            /* all.css ile eşleşmeli, Arial daha yakın bir yedek olarak */
+            font-weight: 300;
+            /* all.css ile eşleşmeli */
+            font-size: 4em;
+            /* all.css'den masaüstü varsayılanı */
+            line-height: 1.6;
+            /* all.css'den masaüstü varsayılanı */
+            min-height: 308px;
+            /* all.css'den 3 satır için masaüstü varsayılanı */
+            color: white;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            /* text-shadow: 2px 2px 4px rgba(0,0,0,0.7); -- Ertele: performans yoğun olabilir */
+        }
+
+        /* LCP Resim Stilleri */
+        .homePage-machine-desktop {
+            display: none;
+        }
+
+        /* Kritik CSS'de mobil cihazlarda varsayılan olarak gizlenir */
+        .homePage-machine-mobile {
+            display: block;
+            /* Bu LCP öğesidir, görünür olduğundan emin olun */
+            max-width: 90%;
+            /* Veya mobil için all.css'den belirli bir genişlik */
+            height: auto;
+            /* En boy oranını koru */
+            margin: 20px auto;
+            /* Ortalama ve boşluk */
+            /* filter: drop-shadow(...); -- Ertele: performans yoğun olabilir */
+        }
+
+        /* CTA Düğmesi (ekranın üst kısmında görünürse) */
+        .cta-button {
+            display: inline-block;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 200;
+            /* all.css ile eşleşmeli */
+            text-transform: uppercase;
+            background-color: transparent;
+            /* all.css'den */
+            border: 2px solid var(--white);
+            /* all.css'den */
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            /* all.css'den */
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            /* all.css'den */
+            margin-top: 1rem;
+            /* Resimden boşluk */
+            /* box-shadow: ...; -- Ertele: performans yoğun olabilir */
+        }
+
+        /* Mobil Cihazlara Özel Geçersiz Kılmalar (bu öğeler için @media (max-width: 768px) bloğunuzla eşleşmeli) */
+        /* Bu blok, özellikle mobil cihazlar için stilleri iyileştirir veya geçersiz kılar, bunların öncelikli olduğundan emin olun */
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 2.5em;
+                /* bu kesme noktası için all.css'den */
+                line-height: 1.4;
+                /* bu kesme noktası için all.css'den */
+                min-height: 168px;
+                /* bu kesme noktası için all.css'den (2.5 * 16 * 1.4 * 3) */
+            }
+
+            .header .container {
+                justify-content: center;
+                /* Mobil için all.css'e göre */
+                padding: 0 1rem;
+                /* Örnek, all.css'inizden ayarlayın */
+            }
+
+            .logo-text {
+                font-size: 2rem;
+                /* Örnek, mobil değerler için all.css'i kontrol edin */
+                margin: 0;
+                /* Varsa masaüstü kenar boşluklarını sıfırla */
+                padding-left: 0;
+                /* Masaüstü dolgusunu sıfırla */
+                text-align: center;
+                /* Logo mobil cihazda ortalanmışsa */
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+                position: absolute;
+                /* Başlığa/kapsayıcıya göre konumlandırılmışsa */
+                left: 25px;
+                /* all.css'de görüldüğü gibi */
+                top: 50%;
+                /* Dikey ortalama için */
+                transform: translateY(-50%);
+                /* Dikey ortalama için */
+            }
+
+            /* Nav, all.css'de mobil için varsayılan olarak transform/opacity ile gizlenir, bu nedenle basit bir display:none tercih edilmedikçe .nav'ın kendisi için kritik stil yoktur. */
+            /* .nav { display: none; } */
+            /* Tam nav stili ertelenirse transformdan daha basit */
+
+            .hero-text h1 {
+                font-size: 2rem;
+                /* all.css'i kontrol edin: (max-width: 768px) -> .hero-text h1 */
+                margin-bottom: 1.5rem;
+                /* all.css'i kontrol edin */
+            }
+
+            /* .homePage-machine-mobile stilleri mobil için yukarıda zaten tanımlanmıştır, doğru olduğundan emin olun */
+            /* .homePage-machine-desktop display: none; kalmalıdır; */
+        }
+
+        .pre-order-product-image {
+            object-fit: cover;
+            /* Resmin en boy oranını korurken ayrılan alanı kaplamasını sağlar */
+        }
+
+        .desktop-only-product-display .pre-order-product-image {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            max-width: none;
+            aspect-ratio: 1 / 1;
+        }
+
+        .desktop-only-product-display .product-image-container {
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            overflow: visible;
+        }
+
+        .mobile-only-product-display .product-image-container {
+            width: 100%;
+            /* Tam genişliği sağlamak için %80'den değiştirildi */
+            margin: 0 auto;
+            /* Kapsayıcıyı ortala */
+            position: relative;
+            overflow: visible;
+            /* Resmin kesilmediğinden emin olmak için varsayılandan değiştirildi */
+        }
+
+        .mobile-only-product-display .pre-order-product-image {
+            height: auto;
+            aspect-ratio: 1 / 1;
+            object-fit: contain;
+            /* Tam resmin görünür olduğundan emin olmak için cover'dan değiştirildi */
+            display: block;
+            max-width: none;
+            /* Max-width kısıtlamasını kaldır */
+        }
+    </style>
+
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600;700&family=Dancing+Script:wght@600&display=swap"
+            rel="stylesheet">
+    </noscript>
+
+    <link href="all.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="styles/2ndpage.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
+    </noscript>
+    <link href="styles/footer.css" rel="stylesheet" media="print" onload="this.media='all'">
+</head>
+
+<body class="homepage-background">
+    <div class="menu-blur-overlay">
+    </div>
+    <header class="header" id="main-header">
+        <div class="container">
+            <div class="logo-text">
+                MyMiniSlot
+            </div>
+            <nav class="nav" id="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link" data-section="home" href="#home">
+                            ANA SAYFA
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-section="craftsmanship" href="#craftsmanship">
+                            İŞÇİLİK
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-section="experience" href="#experience">
+                            DENEYİM
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-section="pre-order" href="#pre-order">
+                            ÖN SİPARİŞ
+                        </a>
+                    </li>
+                </ul>
+                <div class="nav-indicator" id="indicator">
+                </div>
+            </nav>
+            <button aria-label="Mobil menüyü aç/kapat" class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span class="hamburger">
+                </span>
+            </button>
+            <div class="header-line">
+            </div>
+        </div>
+    </header>
+    <main class="hero-section" id="home">
+        <div class="hero-text">
+            <h1>
+                KİŞİSEL
+                <br>
+                VEGAS'INIZ METALDEN
+                <br>
+                DÖVÜLDÜ
+            </h1>
+            <img alt="MyMiniSlot cihazı mobil görünüm" class="homePage-machine-mobile" src="image/homePageImage_4.webp"
+                width="400" height="240" fetchpriority="high" decoding="async" loading="eager">
+            <a class="cta-button" href="#craftsmanship">
+                İşçiliği keşfedin →
+            </a>
+        </div>
+        <img alt="MyMiniSlot cihazı masaüstü görünümü" class="homePage-machine-desktop" src="image/homePageImage_4.webp"
+            loading="eager" width="1200" height="674" decoding="async" fetchpriority="high">
+    </main>
+    <section class="page-section craftsmanship-background" id="craftsmanship">
+        <div class="showcase-container">
+            <div class="main-container">
+                <div class="product-container">
+                    <svg class="product-svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet"
+                        style="width:100%;height:auto;display:block;overflow:visible;">
+
+                        <image alt="MyMiniSlot cihazı özellikleri görünümü" class="product-image-homepage"
+                            href="image/machine.png.webp" x="0" y="0" width="1000" height="1000" />
+
+                        {/* */}
+                        <line id="line-high-res" class="animated-line" x1="60" y1="275" x2="470" y2="275"
+                            stroke="white" stroke-width="2" vector-effect="non-scaling-stroke" />
+                        <circle id="circle-high-res" cx="470" cy="275" r="7" fill="white" /> {/* */}
+
+                        {/* */}
+                        <line id="line-forged-metal" class="animated-line" x1="-20" y1="420" x2="340" y2="420"
+                            stroke="white" stroke-width="2" vector-effect="non-scaling-stroke" />
+                        <circle id="circle-forged-metal" cx="340" cy="420" r="7" fill="white" /> {/* */}
+
+                        {/* */}
+                        <line id="line-providers" class="animated-line" x1="-90" y1="550" x2="280" y2="550"
+                            stroke="white" stroke-width="2" vector-effect="non-scaling-stroke" />
+                        <circle id="circle-providers" cx="280" cy="550" r="7" fill="white" /> {/* */}
+
+                        {/* */}
+                        <line id="line-buttons" class="animated-line" x1="1000" y1="630" x2="710" y2="630"
+                            stroke="white" stroke-width="2" vector-effect="non-scaling-stroke" />
+                        <circle id="circle-buttons" cx="710" cy="630" r="7" fill="white" /> {/* */}
+
+                        {/* */}
+                    </svg>
+                    <div class="feature-label left-label high-res">
+                        <div class="plus-circle">
+                            <svg class="plus-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="50"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <line x1="12" x2="12" y1="5" y2="19">
+                                </line>
+                                <line x1="5" x2="19" y1="12" y2="12">
+                                </line>
+                            </svg>
+                        </div>
+                        <div class="label-text">
+                            YÜKSEK ÇÖZÜNÜRLÜKLÜ EKRAN
+                        </div>
+                    </div>
+                    <div class="feature-label left-label forged-metal">
+                        <div class="plus-circle">
+                            <svg class="plus-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <line x1="12" x2="12" y1="5" y2="19">
+                                </line>
+                                <line x1="5" x2="19" y1="12" y2="12">
+                                </line>
+                            </svg>
+                        </div>
+                        <div class="label-text">
+                            METALDEN DÖVÜLMÜŞ
+                        </div>
+                    </div>
+                    <div class="feature-label left-label providers">
+                        <div class="plus-circle">
+                            <svg class="plus-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <line x1="12" x2="12" y1="5" y2="19">
+                                </line>
+                                <line x1="5" x2="19" y1="12" y2="12">
+                                </line>
+                            </svg>
+                        </div>
+                        <div class="label-text">
+                            30 FARKLI SAĞLAYICI
+                        </div>
+                    </div>
+                    <div class="feature-label right-label buttons">
+                        <div class="label-text">
+                            PREMIUM DÜĞMELER
+                        </div>
+                        <div class="plus-circle-right">
+                            <svg class="plus-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <line x1="12" x2="12" y1="5" y2="19">
+                                </line>
+                                <line x1="5" x2="19" y1="12" y2="12">
+                                </line>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="cta">
+                        <a href="#experience" class="cta-link">
+                            <span class="cta-text">
+                                Deneyimi hissedin
+                            </span>
+                            <svg class="arrow-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <line x1="5" x2="19" y1="12" y2="12">
+                                </line>
+                                <polyline points="12 5 19 12 12 19">
+                                </polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="trigger-snap-to-experience" style="height: 1px; position: relative; top: 50px;"></div>
+    <section id="experience" class="page-section">
+        <h5>Binlerce oyun parmaklarınızın ucunda</h5>
+
+        <div class="experience-visual-hub">
+            <div class="mobile-logo-grid">
+                <img src="image/pragmatic.webp" alt="Pragmatic Play oyun sağlayıcısı logosu" width="200" height="60"
+                    class="provider-logo logo-pragmatic" loading="lazy">
+                <img src="image/hacksaw.webp" alt="Hacksaw Gaming oyun sağlayıcısı logosu" width="200" height="60"
+                    class="provider-logo logo-hacksaw" loading="lazy">
+                <img src="image/unde.png" alt="Unde oyun sağlayıcısı logosu" width="70" height="40"
+                    class="provider-logo logo-unde mobile-logo-small" loading="lazy">
+                <img src="image/helio.png" alt="Helio Gaming oyun sağlayıcısı logosu" width="200" height="60"
+                    class="provider-logo logo-helio" loading="lazy">
+                <img src="image/lightingBox (2).webp" alt="Lighting Box oyun sağlayıcısı logosu" width="200" height="60"
+                    class="provider-logo logo-lightingBox" loading="lazy">
+                <img src="image/amusnet.webp" alt="Amusnet oyun sağlayıcısı logosu" width="300" height="100"
+                    class="provider-logo logo-amusnet mobile-logo-large" loading="lazy">
+                <img src="image/igt.png" alt="IGT oyun sağlayıcısı logosu" width="150" height="60"
+                    class="provider-logo logo-igt" loading="lazy">
+                <img src="image/playTech.png" alt="Playtech oyun sağlayıcısı logosu" width="200" height="60"
+                    class="provider-logo logo-playtech" loading="lazy">
+                <img src="image/netEnt.png" alt="NetEnt oyun sağlayıcısı logosu" width="160" height="60"
+                    class="provider-logo logo-netent" loading="lazy">
+                <img src="image/evolution.png" alt="Evolution Gaming oyun sağlayıcısı logosu" width="120" height="60"
+                    class="provider-logo logo-evolution" loading="lazy">
+                <img src="image/nolimit.png" alt="Nolimit City oyun sağlayıcısı logosu" width="180" height="60"
+                    class="provider-logo logo-nolimit" loading="lazy">
+                <img src="image/everyMatrix.webp" alt="EveryMatrix oyun sağlayıcısı logosu" width="200" height="60"
+                    class="provider-logo logo-everyMatrix" loading="lazy">
+            </div>
+
+            <img src="image/ExperienceImage.webp" alt="Oyun sağlayıcı logolarıyla çevrili MyMiniSlot Cihazı" width="500"
+                height="400" class="experience-main-product-image" loading="lazy">
+
+            <button id="toggle-logos" class="logo-toggle-btn" aria-expanded="false" aria-label="Daha fazla oyun göster">
+                ^
+            </button>
+        </div>
+
+        <div class="logo-slider-container">
+            <div class="logo-slider-track">
+                <img src="image/pragmatic.webp" alt="Pragmatic Play oyun sağlayıcısı logosu" width="200" height="60"
+                    class="provider-logo logo-pragmatic" data-role="1" loading="lazy">
+                <img src="image/hacksaw.webp" alt="Hacksaw Gaming oyun sağlayıcısı logosu" width="200" height="60"
+                    class="provider-logo logo-hacksaw" loading="lazy">
+                <img src="image/helio.png" alt="Helio Gaming oyun sağlayıcısı logosu" width="200" height="60"
+                    class="provider-logo logo-helio" loading="lazy">
+                <img src="image/lightingBox (2).webp" alt="Lighting Box oyun sağlayıcısı logosu"
+                    class="provider-logo logo-lightingBox" loading="lazy" width="180" height="60">
+                <img src="image/amusnet.webp" alt="Amusnet oyun sağlayıcısı logosu" class="provider-logo mobile-logo-large"
+                    loading="lazy" width="300" height="100">
+                <img src="image/igt.png" alt="IGT oyun sağlayıcısı logosu" class="provider-logo logo-igt" loading="lazy"
+                    width="150" height="60">
+                <img src="image/playTech.png" alt="Playtech oyun sağlayıcısı logosu" class="provider-logo logo-playtech"
+                    loading="lazy" width="200" height="60">
+                <img src="image/netEnt.png" alt="NetEnt oyun sağlayıcısı logosu" class="provider-logo logo-netent"
+                    loading="lazy" width="160" height="60">
+                <img src="image/unde.png" alt="Unde oyun sağlayıcısı logosu"
+                    class="provider-logo logo-unde mobile-logo-small" loading="lazy" width="70" height="40">
+                <img src="image/evolution.png" alt="Evolution Gaming oyun sağlayıcısı logosu"
+                    class="provider-logo logo-evolution-slider" loading="lazy" width="120" height="60">
+                <img src="image/everyMatrix.webp" alt="EveryMatrix oyun sağlayıcısı logosu"
+                    class="provider-logo logo-everyMatrix" loading="lazy" width="200" height="60">
+                <img src="image/nolimit.png" alt="Nolimit City oyun sağlayıcısı logosu" class="provider-logo logo-nolimit"
+                    loading="lazy" width="180" height="60">
+            </div>
+        </div>
+
+        <a class="experience-cta-button experience-desktop" href="#pre-order">
+            <span class="button-text-desktop">Yolculuğunuza başlayın</span>
+            <span class="button-text-mobile">Şimdi sipariş ver →</span>
+        </a>
+    </section>
+    <section class="page-section pre-order-background" id="pre-order">
+        <div class="pre-order-container">
+            <div class="product-display desktop-only-product-display">
+                <div class="product-image-container">
+                    <img alt="MyMiniSlot Makinesi ön sipariş görünümü" class="pre-order-product-image"
+                        src="image/1.webp" width="450" height="450">
+                </div>
+                <div class="product-buttons">
+                </div>
+                <div class="view-360">
+                    <img alt="360 Derece Görünüm Simgesi" class="view-icon view-desktop" src="image/360_icon.webp">
+                </div>
+            </div>
+
+            <div class="pre-order-content">
+                <div class="pre-order-header">
+                    <h2>
+                        MyMiniSlot'u
+                        <span class="script-logo">
+                            MyMiniSlot
+                        </span>
+                        1000€ karşılığında satın alın
+                    </h2>
+                    <h2>
+                        ve depozito olarak teslim alın.
+                    </h2>
+                </div>
+                <div class="product-features">
+                    <p class="feature-tagline">
+                        Size özel gerçek bir slot makinesi.
+                    </p>
+                    <p class="feature-tagline">
+                        Her yerde oynayın.
+                    </p>
+                    <p class="feature-tagline no-constraints">
+                        <span>
+                            Kumarhane yok.
+                        </span>
+                        <span>
+                            Kalabalık yok.
+                        </span>
+                        <span>
+                            Bekleme yok.
+                        </span>
+                    </p>
+                </div>
+
+                <div class="product-display mobile-only-product-display">
+                    <div class="product-image-container">
+                        <img alt="MyMiniSlot Makinesi ön sipariş mobil görünümü" class="pre-order-product-image"
+                            src="image/1.webp" width="300" height="300">
+                    </div>
+                    <div class="product-buttons">
+                    </div>
+                    <div class="view-360">
+                        <img alt="360 Derece Görünüm Simgesi Mobil" class="view-icon" src="image/360_icon.webp">
+                    </div>
+                </div>
+                <div class="order-action">
+                    <a class="order-now-btn" href="#">
+                        ŞİMDİ SİPARİŞ VER
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <a href="about-us.html">
+                        Hakkımızda
+                    </a>
+                    <a href="/blog">
+                        Blog
+                    </a>
+                    <a href="support.html">
+                        Destek
+                    </a>
+                </div>
+                <div class="footer-column">
+                    <a href="cookie-policy.html">
+                        Çerez Politikası
+                    </a>
+                    <a href="privacy-policy.html">
+                        Gizlilik Politikası
+                    </a>
+                    <a href="responsible-gambling.html">
+                        Sorumlu Kumar
+                    </a>
+                </div>
+                <div class="footer-column">
+                    <a href="/tech-specs">
+                        Teknik Özellikler
+                    </a>
+                    <a href="/commissions">
+                        Komisyonlar
+                    </a>
+                    <a href="/game-providers">
+                        Oyun Sağlayıcıları
+                    </a>
+                </div>
+                <div class="footer-column language-and-social-group">
+                    <div class="language-selector">
+                        <img alt="İngiltere Bayrağı" class="uk-flag" id="footer-flag" src="image/Flag_of_UK.svg"
+                            width="30" height="20">
+                        <span class="flag-label" id="footer-flag-label">
+                            English
+                        </span>
+                        <select class="footer-language-dropdown" id="footer-language-dropdown"
+                            aria-label="Dil seçin">
+                            <option data-flag="image/Flag_of_UK.svg" value="en">
+                                English
+                            </option>
+                            <option data-flag="image/Flag_of_Bulgaria.svg" value="bg">
+                                Bulgarca
+                            </option>
+                            <option data-flag="image/Flag_of_Germany.svg" value="de">
+                                Almanca
+                            </option>
+                            <option data-flag="image/Flag_of_France.svg" value="fr">
+                                Fransızca
+                            </option>
+                            <option data-flag="image/Flag_of_Spain.svg" value="es">
+                                İspanyolca
+                            </option>
+                            <option data-flag="image/Flag_of_Italy.svg" value="it">
+                                İtalyanca
+                            </option>
+                            <option data-flag="image/Flag_of_Russia.svg" value="ru">
+                                Rusça
+                            </option>
+                            <option data-flag="image/Flag_of_Turkey.svg" value="tr">
+                                Türkçe
+                            </option>
+                            <option data-flag="image/Flag_of_India.svg" value="in">
+                                Hintçe
+                            </option>
+                        </select>
+                    </div>
+                    <div class="social-icons-inline-container">
+                        <a href="#" aria-label="MyMiniSlot Twitter X'te">
+                            <img alt="Twitter X sosyal medya simgesi" class="footer-social-img"
+                                src="image/Home (15).webp" width="24" height="24">
+                        </a>
+                        <a href="#" aria-label="MyMiniSlot Instagram'da">
+                            <img alt="Instagram sosyal medya simgesi" class="footer-social-img"
+                                src="image/Home (16).webp" width="24" height="24">
+                        </a>
+                        <a href="#" aria-label="MyMiniSlot Facebook'ta">
+                            <img alt="Facebook sosyal medya simgesi" class="footer-social-img"
+                                src="image/Home (17).webp" width="24" height="24">
+                        </a>
+                        <a href="index.html" aria-label="MyMiniSlot TikTok'ta">
+                            <img alt="TikTok sosyal medya simgesi" class="footer-social-img"
+                                src="image/Home (18).webp" width="24" height="24">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-divider">
+        </div>
+        <div class="crypto-logos">
+            <img alt="MyMiniSlot için Kabul Edilen Kripto Para Birimleri" class="crypto-image"
+                src="image/footer-credits-removebg-preview.webp">
+        </div>
+        <footer class="site-footer-mobile">
+            <img alt="Mobil için Kabul Edilen Kripto Para Birimleri ve Sorumlu Kumar bilgileri"
+                class="mobile-footer-img" src="image/mobile-footer.webp">
+        </footer>
+        <div class="footer-divider">
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-logo">
+                <div class="logo-text-footer">
+                    MyMiniSlot
+                </div>
+            </div>
+            <div class="copyright">
+                MyMiniSlot © 2025
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('header nav a');
+            const sections = document.querySelectorAll('.page-section, .hero-section');
+
+            function updateActiveLink(currentLink) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+                if (currentLink) {
+                    currentLink.classList.add('active');
+                }
+            }
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    if (this.getAttribute('href') === '#') {
+                        e.preventDefault();
+                        document.getElementById('home').scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                        updateActiveLink(this);
+                        return;
+                    }
+                    const targetId = this.getAttribute('href');
+                    if (targetId && targetId.startsWith('#') && targetId.length > 1) {
+                        const targetSection = document.querySelector(targetId);
+                        if (targetSection) {
+                            e.preventDefault();
+                            targetSection.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                            updateActiveLink(this);
+                        }
+                    }
+                });
+            });
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.6
+            };
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const sectionId = entry.target.id;
+                        let correspondingLink = null;
+                        if (sectionId === 'home') {
+                            correspondingLink = document.querySelector('header nav a[href="#"]');
+                        } else if (sectionId) {
+                            correspondingLink = document.querySelector(`header nav a[href="#${sectionId}"]`);
+                        }
+                        if (correspondingLink) {
+                            updateActiveLink(correspondingLink);
+                        }
+                    }
+                });
+            };
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+            sections.forEach(section => {
+                if (section.id) {
+                    observer.observe(section);
+                }
+            });
+            const currentHash = window.location.hash;
+            let initialLink = document.querySelector('header nav a[href="#"]');
+            if (currentHash && currentHash !== '#') {
+                const linkForHash = document.querySelector(`header nav a[href="${currentHash}"]`);
+                if (linkForHash) {
+                    initialLink = linkForHash;
+                }
+            }
+            if (initialLink) {
+                updateActiveLink(initialLink);
+                if (currentHash && currentHash !== '#' && document.querySelector(currentHash)) { }
+            }
+        });
+    </script>
+    <script src="js/craftsmanship_connector.js" defer></script>
+    <script src="js/2ndpage.js" defer></script>
+    <script src="js/header.js" defer></script>
+    <script src="js/sliderEffect.js" defer></script>
+    <script src="js/dropdownExperience.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const langDropdown = document.getElementById('footer-language-dropdown');
+            const flagImg = document.getElementById('footer-flag');
+            const flagLabel = document.getElementById('footer-flag-label');
+            const langOptions = {
+                en: {
+                    flag: 'image/Flag_of_UK.svg', label: 'English'
+                },
+                bg: {
+                    flag: 'image/Flag_of_Bulgaria.svg', label: 'Български'
+                },
+                de: {
+                    flag: 'image/Flag_of_Germany.svg', label: 'Deutsch'
+                },
+                fr: {
+                    flag: 'image/Flag_of_France.svg', label: 'Français'
+                },
+                es: {
+                    flag: 'image/Flag_of_Spain.svg', label: 'Español'
+                },
+                it: {
+                    flag: 'image/Flag_of_Italy.svg', label: 'Italiano'
+                },
+                ru: {
+                    flag: 'image/Flag_of_Russia.svg', label: 'Русский'
+                },
+                tr: {
+                    flag: 'image/Flag_of_Turkey.svg', label: 'Türkçe'
+                },
+                in: {
+                    flag: 'image/Flag_of_India.svg', label: 'भारतीय'
+                }
+            };
+            // İngilizce ile başlat
+            if (flagImg && flagLabel && langOptions['en']) {
+                flagImg.src = langOptions['en'].flag;
+                flagImg.alt = "UK Bayrağı"; // Başlangıç bayrağı için alt metni ayarla
+                flagLabel.textContent = langOptions['en'].label;
+            }
+            if (langDropdown) {
+                langDropdown.value = 'en';
+                langDropdown.addEventListener('change', function () {
+                    const selectedLangValue = langDropdown.value;
+                    const selectedOption = langDropdown.options[langDropdown.selectedIndex];
+                    const flagPath = selectedOption.getAttribute('data-flag');
+                    const langName = selectedOption.textContent.trim();
+
+                    if (flagImg && flagPath) {
+                        flagImg.src = flagPath;
+                        flagImg.alt = langName + " Bayrağı"; // Alt metni güncelle
+                    }
+                    if (flagLabel) {
+                        flagLabel.textContent = langName;
+                    }
+                });
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const imageContainers = document.querySelectorAll('.product-image-container');
+            const imageBaseName = 'image/';
+            const imageCount = 14;
+            const images = [];
+            for (let i = 1; i <= imageCount; i++) {
+                images.push(`${imageBaseName}${i}.webp`);
+            }
+
+            imageContainers.forEach(container => {
+                const productImage = container.querySelector('.pre-order-product-image');
+                if (!productImage) return;
+
+                let currentIndex = 0;      // Geçerli görünür resim indeksi
+                let initialDragIndex = 0;  // Sürüklemenin başlangıcındaki resim indeksi
+                let isDragging = false;
+                let startX = 0;            // Sürüklemenin başlangıcındaki fare/dokunma X konumu
+
+                // Resimleri ön yükle
+                images.forEach(src => {
+                    const img = new Image();
+                    img.src = src;
+                });
+
+                const updateImage = (newIndex) => {
+                    let normalizedIndex = newIndex % images.length;
+                    if (normalizedIndex < 0) {
+                        normalizedIndex += images.length;
+                    }
+
+                    if (images[normalizedIndex] && productImage.src !== images[normalizedIndex]) {
+                        productImage.classList.add('transitioning');
+                        setTimeout(() => {
+                            productImage.src = images[normalizedIndex];
+                            productImage.onload = () => {
+                                requestAnimationFrame(() => {
+                                    productImage.classList.remove('transitioning');
+                                });
+                            };
+                        }, 300); // Geçiş süresiyle daha iyi eşleşmesi için artırıldı
+                    }
+                    currentIndex = normalizedIndex;
+                };
+
+                // İlk resimle başlat
+                if (images.length > 0) {
+                    productImage.src = images[0];
+                    currentIndex = 0;
+                }
+
+                const handleDragStart = (clientX) => {
+                    isDragging = true;
+                    startX = clientX;
+                    initialDragIndex = currentIndex;
+                    container.style.cursor = 'grabbing';
+                    document.body.classList.add('is-dragging-360');
+                };
+
+                const handleDragMove = (clientX) => {
+                    if (!isDragging) return;
+
+                    const deltaX = clientX - startX;
+                    const sensitivity = 25; // Bir kareyi değiştirmek için sürükleme pikseli. Gerektiği gibi ayarlayın.
+
+                    const imageShift = Math.floor(deltaX / sensitivity);
+
+                    let newImageIndex = initialDragIndex + imageShift;
+                    updateImage(newImageIndex);
+                };
+
+                const handleDragEnd = () => {
+                    if (isDragging) {
+                        isDragging = false;
+                        container.style.cursor = 'grab';
+                        document.body.classList.remove('is-dragging-360');
+                    }
+                };
+
+                container.addEventListener('mousedown', (e) => {
+                    handleDragStart(e.clientX);
+                    e.preventDefault(); // Varsayılan resim sürükleme davranışını engelle
+                });
+
+                container.addEventListener('touchstart', (e) => {
+                    if (e.touches.length > 0) {
+                        handleDragStart(e.touches[0].clientX);
+                        // Dokunma için, e.preventDefault() dikkatli olunmazsa kaydırma ile çakışabilir.
+                        // Gerekip gerekmediğini test edin. Sürükleme aynı zamanda kaydırma yapıyorsa, ekleyin.
+                        // e.preventDefault(); 
+                    }
+                }, { passive: true }); // passive:true genellikle kaydırma performansı için touchstart için iyidir
+
+                document.addEventListener('mousemove', (e) => {
+                    if (isDragging) {
+                        handleDragMove(e.clientX);
+                    }
+                });
+
+                document.addEventListener('touchmove', (e) => {
+                    if (isDragging && e.touches.length > 0) {
+                        handleDragMove(e.touches[0].clientX);
+                        // Sürükleme etkileşimi birincil ise, varsayılan kaydırmayı burada engellemek isteyebilirsiniz
+                        // e.preventDefault(); 
+                    }
+                }, { passive: false }); // preventDefault'i çağırmayı düşünüyorsanız passive'i false olarak ayarlayın
+
+                document.addEventListener('mouseup', handleDragEnd);
+                document.addEventListener('touchend', handleDragEnd);
+
+                // Fare element kapsayıcısından VEYA pencereden ayrılırsa sürüklemeyi de sonlandır
+                container.addEventListener('mouseleave', handleDragEnd);
+                document.addEventListener('mouseleave', handleDragEnd);
+
+
+                // Başlangıç imlecini ayarla
+                container.style.cursor = 'grab';
+            });
+        });
+    </script>
+</body>
+
+</html>

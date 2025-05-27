@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>Поддержка - MyMiniSlot</title>
+    <meta name="description"
+        content="Обратитесь в службу поддержки MyMiniSlot по любым вопросам или проблемам. Заполните нашу контактную форму или свяжитесь через чат.">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="all.css" rel="stylesheet">
+    <link href="styles/support.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@400;700&display=swap"
+        rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@400;700&display=swap"
+            rel="stylesheet">
+    </noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body class="support-page">
+    <div class="menu-blur-overlay">
+    </div>
+    <header class="header" id="main-header">
+        <div class="container">
+            <div class="logo-text">
+                MyMiniSlot
+            </div>
+            <nav class="nav" id="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link" data-section="home" href="index.html#home">
+                            ГЛАВНАЯ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-section="craftsmanship" href="index.html#craftsmanship">
+                            МАСТЕРСТВО
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-section="experience" href="index.html#experience">
+                            ОПЫТ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-section="pre-order" href="index.html#pre-order">
+                            ПРЕДЗАКАЗ
+                        </a>
+                    </li>
+                </ul>
+                <div class="nav-indicator" id="indicator">
+                </div>
+            </nav>
+            <button aria-label="Переключить мобильное меню" class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span class="hamburger">
+                </span>
+            </button>
+            <div class="header-line">
+            </div>
+        </div>
+    </header>
+    <main class="support-main-content">
+        <div class="support-container">
+            <div class="support-image-column">
+                <img src="image/gaika.webp" alt="Графика поддержки - Шестеренка со значком человека, представляющая службу поддержки клиентов">
+            </div>
+            <div class="support-form-column">
+                <h2 class="support-title">Поддержка</h2>
+                <form id="support-form">
+                    <div class="form-group">
+                        <label for="name" class="sr-only">Имя</label>
+                        <input type="text" id="name" name="name" placeholder="Имя" aria-label="Имя">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="sr-only">Номер телефона</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Номер телефона" aria-label="Номер телефона">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="sr-only">Электронная почта</label>
+                        <input type="email" id="email" name="email" placeholder="Электронная почта" aria-label="Электронная почта">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="sr-only">Сообщение</label>
+                        <textarea id="message" name="message" rows="6"
+                            placeholder="Lorem Ipsum - это просто фиктивный текст полиграфической и наборной индустрии."
+                            aria-label="Сообщение"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="chat-icon-btn" aria-label="Открыть онлайн-чат поддержки">
+                            <img src="image/headset.png" alt="Значок чата для онлайн-поддержки">
+                        </button>
+                        <button type="submit" class="send-request-btn">Отправить запрос</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <a href="about-us.html">
+                        О нас
+                    </a>
+                    <a href="/blog">
+                        Блог
+                    </a>
+                    <a href="support.html">
+                        Поддержка
+                    </a>
+                </div>
+                <div class="footer-column">
+                    <a href="cookie-policy.html">
+                        Политика использования файлов cookie
+                    </a>
+                    <a href="privacy-policy.html">
+                        Политика конфиденциальности
+                    </a>
+                    <a href="responsible-gambling.html">
+                        Ответственная игра
+                    </a>
+                </div>
+                <div class="footer-column">
+                    <a href="/tech-specs">
+                        Технические характеристики
+                    </a>
+                    <a href="/commissions">
+                        Комиссии
+                    </a>
+                    <a href="/game-providers">
+                        Поставщики игр
+                    </a>
+                </div>
+                <div class="footer-column language-and-social-group">
+                    <div class="language-selector">
+                        <img alt="Флаг Великобритании" class="uk-flag" id="footer-flag" src="image/Flag_of_UK.svg">
+                        <span class="flag-label" id="footer-flag-label">
+                            Русский
+                        </span>
+                        <select class="footer-language-dropdown" id="footer-language-dropdown"
+                            aria-label="Выбрать язык">
+                            <option data-flag="image/Flag_of_UK.svg" value="en">
+                                English
+                            </option>
+                            <option data-flag="image/Flag_of_Bulgaria.svg" value="bg">
+                                Български
+                            </option>
+                            <option data-flag="image/Flag_of_Germany.svg" value="de">
+                                Deutsch
+                            </option>
+                            <option data-flag="image/Flag_of_France.svg" value="fr">
+                                Français
+                            </option>
+                            <option data-flag="image/Flag_of_Spain.svg" value="es">
+                                Español
+                            </option>
+                            <option data-flag="image/Flag_of_Italy.svg" value="it">
+                                Italiano
+                            </option>
+                            <option data-flag="image/Flag_of_Russia.svg" value="ru">
+                                Русский
+                            </option>
+                            <option data-flag="image/Flag_of_Turkey.svg" value="tr">
+                                Türkçe
+                            </option>
+                            <option data-flag="image/Flag_of_India.svg" value="in">
+                                भारतीय
+                            </option>
+                        </select>
+                    </div>
+                    <div class="social-icons-inline-container">
+                        <a href="#" aria-label="MyMiniSlot в Twitter X">
+                            <img alt="Иконка социальной сети Twitter X" class="footer-social-img" src="image/Home (15).webp">
+                        </a>
+                        <a href="#" aria-label="MyMiniSlot в Instagram">
+                            <img alt="Иконка социальной сети Instagram" class="footer-social-img" src="image/Home (16).webp">
+                        </a>
+                        <a href="#" aria-label="MyMiniSlot в Facebook">
+                            <img alt="Иконка социальной сети Facebook" class="footer-social-img" src="image/Home (17).webp">
+                        </a>
+                        <a href="index.html" aria-label="MyMiniSlot в TikTok">
+                            <img alt="Иконка социальной сети TikTok" class="footer-social-img" src="image/Home (18).webp">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-divider">
+        </div>
+        <div class="crypto-logos">
+            <img alt="Принимаемые криптовалюты для MyMiniSlot" class="crypto-image"
+                src="image/footer-credits-removebg-preview.webp">
+        </div>
+        <footer class="site-footer-mobile">
+            <img alt="Принимаемые криптовалюты и информация об ответственной игре для мобильных устройств"
+                class="mobile-footer-img" src="image/mobile-footer.webp">
+        </footer>
+        <div class="footer-divider">
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-logo">
+                <div class="logo-text-footer">
+                    MyMiniSlot
+                </div>
+            </div>
+            <div class="copyright">
+                MyMiniSlot &copy; <span id="current-year">2025</span>
+            </div>
+        </div>
+    </footer>
+    <script src="js/header.js">
+    </script>
+    <script>
+        const yearSpan = document.getElementById('current-year');
+        if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const langDropdown = document.getElementById('footer-language-dropdown');
+            const flagImg = document.getElementById('footer-flag');
+            const flagLabel = document.getElementById('footer-flag-label');
+
+            // Initialize with English
+            if (flagImg && flagLabel) {
+                const initialOption = langDropdown ? langDropdown.options[langDropdown.selectedIndex] : null;
+                if (initialOption) {
+                    const initialFlagPath = initialOption.getAttribute('data-flag');
+                    const initialLangName = initialOption.textContent.trim();
+                    flagImg.src = initialFlagPath || 'image/Flag_of_UK.svg';
+                    flagImg.alt = (initialLangName || 'English') + " Flag";
+                    flagLabel.textContent = initialLangName || 'English';
+                } else { // Fallback if dropdown not found or no option selected
+                    flagImg.src = 'image/Flag_of_UK.svg';
+                    flagImg.alt = "UK Flag";
+                    flagLabel.textContent = 'English';
+                }
+            }
+
+            if (langDropdown) {
+                langDropdown.value = 'ru'; // Ensure Russian is selected by default
+                langDropdown.addEventListener('change', function () {
+                    const selectedOption = langDropdown.options[langDropdown.selectedIndex];
+                    const flagPath = selectedOption.getAttribute('data-flag');
+                    const langName = selectedOption.textContent.trim();
+
+                    if (flagImg && flagPath) {
+                        flagImg.src = flagPath;
+                        flagImg.alt = langName + " Flag";
+                    }
+                    if (flagLabel) {
+                        flagLabel.textContent = langName;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
