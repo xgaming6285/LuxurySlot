@@ -506,7 +506,9 @@ html {
     min-height: calc(100vh - 120px);
     max-width: 1400px;
     margin: 0 auto;
-    overflow: hidden
+    overflow: hidden;
+    position: relative;
+    contain: layout paint;
 }
 
 .craftsmanship-content,
@@ -520,10 +522,14 @@ html {
     z-index: 1;
     flex-basis: 45%;
     max-width: 600px;
-    transform: translateX(-15%)
+    transform: translateX(-15%);
+    position: relative;
+    text-align: left;
+    contain: layout style;
 }
 
 .hero-text h1 {
+    font-family: Montserrat, sans-serif;
     font-size: 4em;
     font-weight: 300;
     line-height: 1.6;
@@ -531,7 +537,10 @@ html {
     color: #fff;
     letter-spacing: .1em;
     margin-top: 0;
-    min-height: 308px
+    min-height: 308px;
+    text-transform: uppercase;
+    font-synthesis: none;
+    contain: layout style;
 }
 
 .cta-button {
@@ -715,7 +724,51 @@ html {
         text-wrap: nowrap;
         line-height: 1.2;
         min-height: 5.4em;
-        margin-left: -25%
+        margin-left: 5%;
+        contain: layout style;
+    }
+
+    .hero-text {
+        left: -5%;
+        top: -30px;
+        contain: layout style;
+    }
+
+    .cta-button {
+        margin-left: -25%;
+    }
+
+    .homePage-machine-desktop {
+        max-width: 1500px !important;
+        right: -20% !important;
+        contain: size layout;
+    }
+}
+
+@media (min-width:1800px) {
+    .hero-section {
+        max-width: 1700px;
+        contain: layout paint;
+    }
+
+    .hero-text h1 {
+        font-size: 5.5em;
+        text-wrap: nowrap;
+        min-height: 423px;
+        margin-left: 25%;
+        contain: layout style;
+    }
+
+    .homePage-machine-desktop {
+        max-width: 1600px !important;
+        top: 7% !important;
+        contain: size layout;
+    }
+
+    .hero-text {
+        left: 0%;
+        top: -10px;
+        contain: layout style;
     }
 }
 
@@ -736,8 +789,8 @@ html {
         flex-direction: column;
         align-items: center;
         max-width: 80%;
-        margin-bottom: 25px;
-        right: 10%
+        margin-bottom: -35px;
+        right: -0%
     }
 
     .mobile-only-product-display .view-360 {
@@ -1338,7 +1391,7 @@ section#experience .logo-pragmatic {
 
 .homePage-machine-desktop {
     position: absolute !important;
-    overflow-x: hidden !important;
+    overflow: hidden !important;
     width: 100% !important;
     max-width: 1600px !important;
     height: auto !important;
@@ -1346,7 +1399,9 @@ section#experience .logo-pragmatic {
     top: 20% !important;
     right: -25% !important;
     z-index: 0 !important;
-    display: block !important
+    display: block !important;
+    contain: size layout;
+    will-change: transform;
 }
 
 .homePage-machine-mobile {
@@ -1411,44 +1466,51 @@ section#experience .logo-pragmatic {
         text-wrap: nowrap;
         line-height: 1.2;
         min-height: 5.4em;
-        margin-left: 5%
+        margin-left: 5%;
+        contain: layout style;
     }
 
     .hero-text {
         left: -5%;
-        top: -30px
+        top: -30px;
+        contain: layout style;
     }
 
     .cta-button {
-        margin-left: -25%
+        margin-left: -25%;
     }
 
     .homePage-machine-desktop {
         max-width: 1500px !important;
-        right: -20% !important
+        right: -20% !important;
+        contain: size layout;
     }
 }
 
 @media (min-width:1800px) {
     .hero-section {
-        max-width: 1700px
+        max-width: 1700px;
+        contain: layout paint;
     }
 
     .hero-text h1 {
         font-size: 5.5em;
         text-wrap: nowrap;
         min-height: 423px;
-        margin-left: 25%
+        margin-left: 25%;
+        contain: layout style;
     }
 
     .homePage-machine-desktop {
         max-width: 1600px !important;
-        top: 7% !important
+        top: 7% !important;
+        contain: size layout;
     }
 
     .hero-text {
         left: 0%;
-        top: -10px
+        top: -10px;
+        contain: layout style;
     }
 }
 
