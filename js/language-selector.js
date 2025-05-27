@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (currentLang) {
             langDropdown.value = currentLang;
             updateFlagAndLabel();
+            // Update links on initial load
+            updateNavigationLinks(currentLang);
         }
 
         // Add change event listener
@@ -53,6 +55,68 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    function updateNavigationLinks(selectedLang) {
+        // Update all navigation links to point to the correct language version
+        const allLinks = document.querySelectorAll('a[href]');
+        const langPrefixes = ['bg-', 'de-', 'fe-', 'esp-', 'it-', 'hi-', 'russ-', 'tr-'];
+
+        allLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            // Skip external links and pure hash links
+            if (!href || href.startsWith('http') || href.startsWith('//') || href === '#') {
+                return;
+            }
+
+            // Split href into filename and hash parts
+            let [filename, ...hashParts] = href.split('#');
+            let hash = hashParts.length > 0 ? '#' + hashParts.join('#') : '';
+
+            // If it's just a hash link on the current page, skip it
+            if (!filename && hash) {
+                return;
+            }
+
+            // If filename is empty (current page), use current page name
+            if (!filename) {
+                filename = window.location.pathname.split('/').pop() || 'index.html';
+            }
+
+            // Remove any existing language prefix
+            let baseFilename = filename;
+            for (const prefix of langPrefixes) {
+                if (baseFilename.startsWith(prefix)) {
+                    baseFilename = baseFilename.substring(prefix.length);
+                    break;
+                }
+            }
+
+            // Add new language prefix if not English
+            let newHref;
+            if (selectedLang === 'en') {
+                newHref = baseFilename;
+            } else {
+                const langPrefix = {
+                    'bg': 'bg-',
+                    'de': 'de-',
+                    'fr': 'fe-',
+                    'es': 'esp-',
+                    'it': 'it-',
+                    'in': 'hi-',
+                    'ru': 'russ-',
+                    'tr': 'tr-'
+                }[selectedLang];
+                newHref = langPrefix + baseFilename;
+            }
+
+            // Reattach hash if it exists
+            if (hash) {
+                newHref += hash;
+            }
+
+            link.setAttribute('href', newHref);
+        });
+    }
+
     function redirectToLanguageVersion() {
         const selectedLang = langDropdown.value;
         const currentPath = window.location.pathname;
@@ -85,6 +149,9 @@ document.addEventListener('DOMContentLoaded', function () {
             }[selectedLang];
             newPath = langPrefix + baseFile;
         }
+
+        // Update all navigation links before redirecting
+        updateNavigationLinks(selectedLang);
 
         // Redirect to new URL
         if (newPath && newPath !== currentFile) {
