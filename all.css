@@ -1940,7 +1940,7 @@ svg.product-svg {
         left: 50%;
         transform: translateX(-50%);
         width: auto;
-        max-width: 100%;
+        max-width: 200%;
         height: auto;
         margin: 10px auto;
     }
