@@ -678,8 +678,8 @@ html {
 
 .pre-order-product-image {
     max-width: 100%;
-    width: 450px;
-    height: 450px;
+    width: 600px;
+    height: 600px;
     object-fit: contain;
     display: block;
     margin: 0 auto;
@@ -695,7 +695,7 @@ html {
 
 @media (min-width:1200px) {
     .pre-order-product-image {
-        transform: scale(1.15)
+        transform: scale(1.25)
     }
 }
 
@@ -768,6 +768,11 @@ html {
     .cta-button {
         font-size: 1.2em !important
     }
+
+    .pre-order-product-image {
+        width: 500px;
+        height: 500px;
+    }
 }
 
 @media (max-width:576px) {
@@ -776,7 +781,8 @@ html {
     }
 
     .pre-order-product-image {
-        max-width: 100%
+        width: 400px;
+        height: 400px;
     }
 
     .view-icon {
