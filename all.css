@@ -536,7 +536,6 @@ html {
 
 .cta-button {
     display: inline-block;
-    background-color: #1e252f;
     color: #fff;
     padding: 5px 25px;
     font-weight: 200;
@@ -546,7 +545,7 @@ html {
     font-family: Montserrat;
     letter-spacing: .075em;
     text-wrap: nowrap;
-    margin-left: -73%
+    margin-left: -73%;
 }
 
 .cta-button:hover {
