@@ -197,10 +197,10 @@ html {
     color: var(--gray-300)
 }
 
-.nav-link.active {
+/* .nav-link.active {
     color: var(--white);
     font-weight: 700
-}
+} */
 
 .nav-indicator {
     position: absolute;
@@ -1557,7 +1557,7 @@ section#experience .logo-pragmatic {
     }
 
     .hero-text h1 {
-        font-size: 5.5em;
+        font-size: 4.5em;
         text-wrap: wrap;
         margin-left: 0%;
         overflow-wrap: break-word;
