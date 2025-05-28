@@ -1204,7 +1204,7 @@ section#experience .logo-helio {
 }
 
 section#experience .logo-amusnet {
-    width: 300px;
+    width: 250px;
     top: 30px;
     left: 180px;
     transform: translate(-50%, -50%);
@@ -1267,17 +1267,17 @@ section#experience .logo-igt {
 }
 
 section#experience .logo-hacksaw {
-    width: 200px;
+    width: 300px;
     bottom: 240px;
     margin-left: -300px;
     opacity: .5
 }
 
 section#experience .logo-pragmatic {
-    width: 200px;
+    max-width: 200px;
     opacity: .5;
     top: 350px;
-    left: -210px;
+    left: -150px;
     transform: translate(-50%, -50%)
 }
 
