@@ -505,7 +505,7 @@ html {
     padding: 100px 14% 80px;
     min-height: calc(100vh - 120px);
     max-width: 1400px;
-    overflow: hidden
+    overflow: visible
 }
 
 .craftsmanship-content,
@@ -1548,7 +1548,7 @@ section#experience .logo-pragmatic {
 
     .homePage-machine-desktop {
         max-width: 1500px !important;
-        right: -21% !important
+        right: -29% !important
     }
 }
 
@@ -1994,7 +1994,7 @@ svg.product-svg {
 
 @media (min-width: 1200px) {
     .pre-order-product-image {
-        transform: scale(1.4);
+        transform: scale(1.2);
     }
 }
 
