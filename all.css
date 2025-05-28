@@ -1557,7 +1557,7 @@ section#experience .logo-pragmatic {
     }
 
     .hero-text h1 {
-        font-size: 4.5em;
+        font-size: 4.0em;
         text-wrap: wrap;
         margin-left: 0%;
         overflow-wrap: break-word;
@@ -1832,7 +1832,6 @@ body.logos-open .logo-toggle-btn {
 
 body.logos-open section#experience .logo-slider-container {
     max-height: 300px !important;
-    overflow-x: auto !important;
     overflow-y: hidden !important
 }
 
