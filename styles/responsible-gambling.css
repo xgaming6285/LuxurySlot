@@ -54,17 +54,17 @@ body.responsible-gambling-body {
     color: #fff
 }
 
-.gambling-title::after {
+/* .gambling-title::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: 0;
     width: 630px;
     height: 2px;
-    background-color: #fff
+    /* background-color: #fff */
 }
 
-.gambling-text p {
+*/ .gambling-text p {
     font-size: 20px;
     line-height: 1.8;
     color: #e0e0e0;
@@ -127,11 +127,14 @@ body.responsible-gambling-body {
 
 @media (max-width:480px) {
     .gambling-title {
-        font-size: 24px
+        font-size: 24px;
+        text-align: left;
+
     }
 
     .gambling-text p {
-        font-size: 15px
+        font-size: 15px;
+        text-align: left;
     }
 
     .device-showcase img {

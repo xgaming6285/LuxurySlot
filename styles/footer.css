@@ -23,7 +23,8 @@ body {
     background-color: #1e252f;
     color: #e0e0e0;
     padding: 40px 0 20px;
-    border-top: 3.5px solid rgba(255, 255, 255, .2)
+    border-top: 3.5px solid rgba(255, 255, 255, .2);
+    margin-top: 15%;
 }
 
 .footer-content {

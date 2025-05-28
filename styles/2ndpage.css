@@ -268,7 +268,7 @@ body {
     overflow: visible;
     position: relative;
   }
-  
+
   .product-container {
     width: 100%;
     flex-direction: column;
@@ -511,7 +511,7 @@ body {
   .cta {
     position: absolute;
     bottom: -71%;
-    right: -20%;
+    right: -0%;
     display: flex;
     align-items: center;
     gap: 8px;
