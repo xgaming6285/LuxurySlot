@@ -1127,8 +1127,7 @@ section#experience p:empty {
 .about-text p {
     margin-bottom: -2px;
     padding-bottom: 20px;
-    border-bottom: 2px solid rgba(255, 255, 255, .15);
-    width: auto
+    width: auto;
 }
 
 .about-text p:last-child {
@@ -2076,10 +2075,12 @@ body.is-dragging-360 .view-360 {
         transform: scale(1);
         opacity: 1;
     }
+
     50% {
         transform: scale(1.1);
         opacity: 0.8;
     }
+
     100% {
         transform: scale(1);
         opacity: 1;
