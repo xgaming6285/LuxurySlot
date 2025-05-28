@@ -671,15 +671,15 @@ html {
     margin-bottom: 2rem;
     position: relative;
     flex: 0 1 auto;
-    max-width: 450px;
+    max-width: 550px;
     margin: 0 auto;
-    overflow: visible
+    overflow: visible;
 }
 
 .pre-order-product-image {
     max-width: 100%;
-    width: 450px;
-    height: 450px;
+    width: 600px;
+    height: 600px;
     object-fit: contain;
     display: block;
     margin: 0 auto;
@@ -695,7 +695,7 @@ html {
 
 @media (min-width:1200px) {
     .pre-order-product-image {
-        transform: scale(1.15)
+        transform: scale(1.4)
     }
 }
 
@@ -734,7 +734,7 @@ html {
         display: flex;
         flex-direction: column;
         align-items: center;
-        max-width: 80%;
+        max-width: none;
         margin-bottom: 25px;
         right: 10%
     }
@@ -768,15 +768,25 @@ html {
     .cta-button {
         font-size: 1.2em !important
     }
+
+    .pre-order-product-image {
+        width: 700px;
+        height: 700px;
+    }
+
+    .product-image-container {
+        min-height: 700px;
+    }
 }
 
 @media (max-width:576px) {
     .product-display {
-        max-width: 90%
+        max-width: none;
     }
 
     .pre-order-product-image {
-        max-width: 100%
+        width: 500px;
+        height: 500px;
     }
 
     .view-icon {
@@ -852,6 +862,10 @@ html {
         margin-top: 20px;
         margin-right: 10px;
     }
+
+    .product-image-container {
+        min-height: 500px;
+    }
 }
 
 @media (max-width:480px) {
@@ -894,13 +908,17 @@ html {
         text-wrap: nowrap;
         transform: translateX(2%)
     }
+
+    .product-image-container {
+        min-height: 500px;
+    }
 }
 
 .product-buttons,
 .view-360 {
     position: absolute;
     margin-left: 30%;
-    margin-top: 20%;
+    margin-top: 10%;
 }
 
 .product-buttons {
@@ -1838,7 +1856,7 @@ body.logos-open section#experience .logo-slider-container {
         display: flex;
         flex-direction: column;
         align-items: center;
-        max-width: 80%;
+        max-width: none;
         margin-bottom: -35px;
         right: -0%
     }
@@ -1926,11 +1944,11 @@ svg.product-svg {
     }
 
     .mobile-only-product-display {
-        max-width: 80%
+        max-width: none;
     }
 
     .pre-order-product-image {
-        max-width: 100%
+        max-width: none;
     }
 
     .cta-button {
@@ -1964,16 +1982,16 @@ svg.product-svg {
 /* Added style for the new container */
 .product-image-container {
     position: relative;
-    margin-bottom: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: visible;
+    width: 100%;
 }
 
 @media (min-width: 1200px) {
     .pre-order-product-image {
-        transform: scale(1.15)
+        transform: scale(1.4);
     }
 }
 
@@ -2037,8 +2055,8 @@ body.is-dragging-360 {
 
 .view-360 {
     position: absolute;
-    top: 40%;
-    left: 25%;
+    top: 55%;
+    left: 20%;
     transform: translate(-50%, -50%);
     z-index: 10;
     transition: opacity 0.3s ease;

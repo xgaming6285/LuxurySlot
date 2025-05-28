@@ -326,7 +326,7 @@
             object-fit: contain;
             /* Changed from cover to ensure full image is visible */
             display: block;
-            max-width: 80%;
+            max-width: 100%;
             /* Remove max-width constraint */
         }
     </style>
@@ -879,7 +879,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             const imageContainers = document.querySelectorAll('.product-image-container');
             const imageBaseName = 'image/';
-            const imageCount = 14;
+            const imageCount = 36;
             const images = [];
             for (let i = 1; i <= imageCount; i++) {
                 images.push(`${imageBaseName}${i}.webp`);
