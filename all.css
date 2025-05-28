@@ -1969,6 +1969,7 @@ svg.product-svg {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: visible;
 }
 
 @media (min-width: 1200px) {
@@ -2033,4 +2034,64 @@ body.is-dragging-360 {
 .product-image-container:hover .hover-label[data-image="image/1.webp"] {
     opacity: 1;
     visibility: visible;
+}
+
+.view-360 {
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.view-icon {
+    width: 45px;
+    height: 45px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+body.is-dragging-360 .view-360 {
+    opacity: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .view-icon {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+.pre-order-product-image {
+    position: relative;
+    z-index: 1;
+}
+
+/* Add a subtle pulse animation to the 360 icon */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.view-360:not(.hidden) .view-icon {
+    animation: pulse 2s infinite ease-in-out;
+}
+
+/* Hide the icon when dragging */
+body.is-dragging-360 .view-360 {
+    opacity: 0;
+    visibility: hidden;
 }
