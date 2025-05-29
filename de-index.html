@@ -12,10 +12,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Critical Preloads (LCP Image & Critical Fonts CSS) -->
-    <link rel="preload" as="image" href="image/homePageImage_4.webp" media="(max-width: 768px)" fetchpriority="high"
-        imagesrcset="image/homePageImage_4.webp 1200w" imagesizes="(max-width: 444px) 90vw, 400px">
-    <link rel="preload" as="image" href="image/homePageImage_4.webp" media="(min-width: 769px)" fetchpriority="high"
-        imagesizes="1200px" imagesrcset="image/homePageImage_4.webp 1200w">
+    <link rel="preload" as="image" href="image/NewMachine.png" media="(max-width: 768px)" fetchpriority="high"
+        imagesrcset="image/NewMachine.png 1200w" imagesizes="(max-width: 444px) 90vw, 400px">
+    <link rel="preload" as="image" href="image/NewMachine.png" media="(min-width: 769px)" fetchpriority="high"
+        imagesizes="1200px" imagesrcset="image/NewMachine.png 1200w">
     <link rel="preload"
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600;700&family=Dancing+Script:wght@600&display=swap"
         as="style" onload="this.onload=null;this.rel='stylesheet'" fetchpriority="high">
@@ -33,7 +33,7 @@
             width: 100%;
             position: relative;
         }
-
+    
         body {
             font-family: 'Montserrat', sans-serif;
             /* Fallback font will be used initially */
@@ -50,7 +50,7 @@
             min-height: 100vh;
             font-weight: 200;
         }
-
+    
         :root {
             --header-height: 80px;
             --black: #000;
@@ -63,18 +63,18 @@
             --gray-800: #262626;
             --transition-timing: cubic-bezier(0.25, 0.1, 0.25, 1);
         }
-
+    
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+    
         html {
             scroll-padding-top: var(--header-height);
             /* Smooth scroll is JS/user preference, not critical for paint */
         }
-
+    
         /* Header */
         .header {
             position: fixed;
@@ -89,7 +89,7 @@
             contain: layout style;
             /* Good for performance */
         }
-
+    
         .header .container {
             display: flex;
             align-items: center;
@@ -101,7 +101,7 @@
             max-width: 100%;
             /* justify-content: space-between; -- Overridden by mobile */
         }
-
+    
         .logo-text {
             font-family: 'Dancing Script', 'cursive';
             font-weight: 600;
@@ -111,7 +111,7 @@
             flex-shrink: 0;
             /* margin/padding will be set in mobile specific */
         }
-
+    
         .mobile-menu-toggle {
             display: none;
             /* Default, shown in mobile @media */
@@ -123,7 +123,7 @@
             z-index: 501;
             /* Ensure it's above other header content if necessary */
         }
-
+    
         .hamburger {
             display: block;
             position: relative;
@@ -131,7 +131,7 @@
             height: 2px;
             background-color: var(--white);
         }
-
+    
         .hamburger::before,
         .hamburger::after {
             content: '';
@@ -140,17 +140,17 @@
             height: 2px;
             background-color: var(--white);
         }
-
+    
         .hamburger::before {
             top: -6px;
             right: 0px;
         }
-
+    
         .hamburger::after {
             bottom: -6px;
             right: 0px;
         }
-
+    
         /* Hero Section (LCP Container) */
         .hero-section {
             display: flex;
@@ -167,7 +167,7 @@
             overflow: hidden;
             /* If content might overflow */
         }
-
+    
         .hero-text {
             z-index: 10;
             /* If it needs to be above other hero elements */
@@ -176,7 +176,7 @@
             flex-direction: column;
             align-items: center;
         }
-
+    
         .hero-text h1 {
             font-family: 'Montserrat', Arial, sans-serif;
             /* Match all.css, Arial as closer fallback */
@@ -193,12 +193,12 @@
             margin-bottom: 1rem;
             /* text-shadow: 2px 2px 4px rgba(0,0,0,0.7); -- Defer: can be performance intensive */
         }
-
+    
         /* LCP Image Styles */
         .homePage-machine-desktop {
             display: none;
         }
-
+    
         /* Hidden on mobile by default in critical CSS */
         .homePage-machine-mobile {
             display: block;
@@ -211,7 +211,7 @@
             /* Centering and spacing */
             /* filter: drop-shadow(...); -- Defer: can be performance intensive */
         }
-
+    
         /* CTA Button (if visible above the fold) */
         .cta-button {
             display: inline-block;
@@ -219,7 +219,6 @@
             font-weight: 200;
             /* Match all.css */
             text-transform: uppercase;
-            background-color: transparent;
             /* From all.css */
             border: 2px solid var(--white);
             /* From all.css */
@@ -233,26 +232,26 @@
             /* Spacing from image */
             /* box-shadow: ...; -- Defer: can be performance intensive */
         }
-
+    
         /* Mobile-specific Overrides (should match your @media (max-width: 768px) block for these elements) */
         /* This block refines or overrides styles specifically for mobile, ensuring they take precedence */
         @media (max-width: 768px) {
             .hero-text h1 {
-                font-size: 2.0em;
+                font-size: 2.5em;
                 /* from all.css for this breakpoint */
                 line-height: 1.4;
                 /* from all.css for this breakpoint */
                 min-height: 168px;
                 /* from all.css for this breakpoint (2.5 * 16 * 1.4 * 3) */
             }
-
+    
             .header .container {
                 justify-content: center;
                 /* As per all.css for mobile */
                 padding: 0 1rem;
                 /* Example, adjust from your all.css */
             }
-
+    
             .logo-text {
                 font-size: 2rem;
                 /* Example, check all.css for mobile values */
@@ -263,7 +262,7 @@
                 text-align: center;
                 /* If logo is centered on mobile */
             }
-
+    
             .mobile-menu-toggle {
                 display: block;
                 position: absolute;
@@ -275,27 +274,27 @@
                 transform: translateY(-50%);
                 /* For vertical centering */
             }
-
+    
             /* Nav is hidden by default via transform/opacity in all.css for mobile, so no critical styles for .nav itself unless a basic display:none is preferred here for simplicity */
             /* .nav { display: none; } */
             /* Simpler than transform if full nav style deferred */
-
+    
             .hero-text h1 {
                 font-size: 2rem;
                 /* Check all.css: (max-width: 768px) -> .hero-text h1 */
                 margin-bottom: 1.5rem;
                 /* Check all.css */
             }
-
+    
             /* .homePage-machine-mobile styles are already defined above for mobile, ensure they are correct */
             /* .homePage-machine-desktop should remain display: none; */
         }
-
+    
         .pre-order-product-image {
             object-fit: cover;
             /* Ensures the image covers the allocated space while maintaining aspect ratio */
         }
-
+    
         .desktop-only-product-display .pre-order-product-image {
             width: 100%;
             height: auto;
@@ -304,31 +303,32 @@
             max-width: none;
             aspect-ratio: 1 / 1;
         }
-
+    
         .desktop-only-product-display .product-image-container {
-            width: 100%;
-            margin: 0 auto;
+            width: 130%;
             position: relative;
             overflow: visible;
+            margin-bottom: 100px;
+            margin-right: 200px;
         }
-
+    
         .mobile-only-product-display .product-image-container {
             width: 100%;
             /* Changed from 80% to ensure full width */
-            margin: 0 auto;
             /* Center the container */
             position: relative;
             overflow: visible;
-            /* Changed from default to ensure image is not cut */
+            margin-top: -120px
+                /* Changed from default to ensure image is not cut */
         }
-
+    
         .mobile-only-product-display .pre-order-product-image {
             height: auto;
             aspect-ratio: 1 / 1;
             object-fit: contain;
             /* Changed from cover to ensure full image is visible */
             display: block;
-            max-width: none;
+            max-width: 100%;
             /* Remove max-width constraint */
         }
     </style>
@@ -405,13 +405,13 @@
                 <br>
                 IN METALL GESCHMIEDET.
             </h1>
-            <img alt="MyMiniSlot Gerät mobile Ansicht" class="homePage-machine-mobile" src="image/homePageImage_4.webp"
+            <img alt="MyMiniSlot Gerät mobile Ansicht" class="homePage-machine-mobile" src="image/NewMachine.png"
                 width="400" height="240" fetchpriority="high" decoding="async" loading="eager">
             <a style="margin-left: 90px;" class="cta-button" href="#craftsmanship">
                 Erkunde die meisterhafte Verarbeitung →
             </a>
         </div>
-        <img alt="MyMiniSlot Gerät Desktop Ansicht" class="homePage-machine-desktop" src="image/homePageImage_4.webp"
+        <img alt="MyMiniSlot Gerät Desktop Ansicht" class="homePage-machine-desktop" src="image/NewMachine.png"
             loading="eager" width="1200" height="674" decoding="async" fetchpriority="high">
     </main>
     <section class="page-section craftsmanship-background" id="craftsmanship">
@@ -422,7 +422,7 @@
                         style="width:100%;height:auto;display:block;overflow:visible;">
 
                         <image alt="MyMiniSlot Gerät Ansicht mit Funktionen" class="product-image-homepage"
-                            href="image/machine.png.webp" x="0" y="0" width="1000" height="1000" />
+                            href="image/NewMachine.png" x="0" y="0" width="1800" height="1000" />
 
                         {/* <!-- High-Res Display Line and Point --> */}
                         <line id="line-high-res" class="animated-line" x1="60" y1="275" x2="470" y2="275" stroke="white"
@@ -558,8 +558,8 @@
                     class="provider-logo logo-everyMatrix" loading="lazy">
             </div>
 
-            <img src="image/ExperienceImage.webp" alt="MyMiniSlot Gerät umgeben von Logos der Spieleanbieter"
-                width="500" height="400" class="experience-main-product-image" loading="lazy">
+            <img src="image/ExperienceImage.png" alt="MyMiniSlot Gerät umgeben von Logos der Spieleanbieter" width="500"
+                height="400" class="experience-main-product-image" loading="lazy">
 
             <!-- Toggle button for dropdown slider -->
             <button id="toggle-logos" class="logo-toggle-btn" aria-expanded="false"

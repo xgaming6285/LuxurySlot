@@ -869,6 +869,12 @@ html {
     .product-image-container {
         min-height: 500px;
     }
+
+    section#experience img.experience-main-product-image {
+        max-width: 160%;
+        width: 160%;
+        margin-top: -15%;
+    }
 }
 
 @media (max-width:480px) {
@@ -1062,10 +1068,15 @@ section#experience {
 }
 
 img.experience-main-product-image {
-    max-width: 800px;
-    width: 100%;
+    max-width: 1700px;
+    width: 180%;
     height: auto;
-    display: block
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    bottom: 110px;
+    right: 15px;
 }
 
 .provider-logo {
@@ -1101,7 +1112,7 @@ section#experience .experience-cta-button {
     transition: background-color .3s, border-color .3s, transform .2s;
     font-size: 1em;
     text-transform: none;
-    font-family: Montserrat, sans-serif
+    font-family: Montserrat, sans-serif;
 }
 
 section#experience .experience-cta-button:hover {
@@ -1177,7 +1188,8 @@ section#experience .experience-visual-hub {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 450px
+    min-height: 450px;
+    margin-bottom: -170px;
 }
 
 section#experience .provider-logo {
@@ -1262,14 +1274,14 @@ section#experience .logo-nolimit {
 section#experience .logo-igt {
     width: 150px;
     top: -10px;
-    margin-left: 470px;
+    margin-left: 700px;
     opacity: .5
 }
 
 section#experience .logo-hacksaw {
     width: 300px;
-    bottom: 240px;
-    margin-left: -300px;
+    bottom: 510px;
+    margin-left: -10px;
     opacity: .5
 }
 
@@ -1659,7 +1671,9 @@ section#experience .logo-pragmatic {
     }
 
     section#experience img.experience-main-product-image {
-        max-width: 500px
+        width: 160%;
+        margin-top: -15%;
+        right: 30%;
     }
 
     section#experience .experience-cta-button {
