@@ -29,24 +29,24 @@
             width: 100%;
             position: relative;
         }
-
+    
         body {
             font-family: 'Montserrat', sans-serif;
-            /* İlk başta yedek yazı tipi kullanılacaktır */
+            /* Fallback font will be used initially */
             color: white;
             margin: 0;
             padding: 0;
             background-image: url('image/backgroundMainPage.jpg');
-            /* Çok büyük ve ATF için hayati ise bunu ön yüklemeyi düşünün */
+            /* Consider preloading this if it's very large and vital for ATF */
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            /* Bu mobil cihazlarda maliyetli olabilir, performansı test edin */
+            /* This can be costly on mobile, test performance */
             min-height: 100vh;
             font-weight: 200;
         }
-
+    
         :root {
             --header-height: 80px;
             --black: #000;
@@ -59,19 +59,19 @@
             --gray-800: #262626;
             --transition-timing: cubic-bezier(0.25, 0.1, 0.25, 1);
         }
-
+    
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+    
         html {
             scroll-padding-top: var(--header-height);
-            /* Yumuşak kaydırma JS/kullanıcı tercihidir, boyama için kritik değildir */
+            /* Smooth scroll is JS/user preference, not critical for paint */
         }
-
-        /* Başlık */
+    
+        /* Header */
         .header {
             position: fixed;
             top: 0;
@@ -79,47 +79,47 @@
             right: 0;
             height: var(--header-height);
             background-color: rgba(0, 0, 0, 0.5);
-            /* backdrop-filter: blur(10px); -- Ertele: performans yoğun olabilir */
+            /* backdrop-filter: blur(10px); -- Defer: can be performance intensive */
             color: var(--white);
             z-index: 500;
             contain: layout style;
-            /* Performans için iyi */
+            /* Good for performance */
         }
-
+    
         .header .container {
             display: flex;
             align-items: center;
             height: 100%;
             position: relative;
             padding: 0;
-            /* Mobil tarafından geçersiz kılınır */
+            /* Overridden by mobile */
             width: 100%;
             max-width: 100%;
-            /* justify-content: space-between; -- Mobil tarafından geçersiz kılınır */
+            /* justify-content: space-between; -- Overridden by mobile */
         }
-
+    
         .logo-text {
             font-family: 'Dancing Script', 'cursive';
             font-weight: 600;
             font-size: 2.5rem;
-            /* Mobil görünüm için ayarlandı - farklıysa gerçek mobil boyut için all.css'i kontrol edin */
+            /* Adjusted for mobile view - check all.css for actual mobile size if different */
             color: #e0e0e0;
             flex-shrink: 0;
-            /* mobil spesifikte margin/padding ayarlanacaktır */
+            /* margin/padding will be set in mobile specific */
         }
-
+    
         .mobile-menu-toggle {
             display: none;
-            /* Varsayılan, mobil @media'da gösterilir */
+            /* Default, shown in mobile @media */
             background: none;
             border: none;
             color: var(--white);
             cursor: pointer;
             padding: 0.5rem;
             z-index: 501;
-            /* Gerekirse diğer başlık içeriğinin üzerinde olduğundan emin olun */
+            /* Ensure it's above other header content if necessary */
         }
-
+    
         .hamburger {
             display: block;
             position: relative;
@@ -127,7 +127,7 @@
             height: 2px;
             background-color: var(--white);
         }
-
+    
         .hamburger::before,
         .hamburger::after {
             content: '';
@@ -136,18 +136,18 @@
             height: 2px;
             background-color: var(--white);
         }
-
+    
         .hamburger::before {
             top: -6px;
             right: 0px;
         }
-
+    
         .hamburger::after {
             bottom: -6px;
             right: 0px;
         }
-
-        /* Kahraman Bölümü (LCP Kapsayıcı) */
+    
+        /* Hero Section (LCP Container) */
         .hero-section {
             display: flex;
             flex-direction: column;
@@ -155,143 +155,142 @@
             align-items: center;
             text-align: center;
             min-height: 100vh;
-            /* Veya tam görünüm yüksekliği değilse belirli bir yükseklik */
+            /* Or specific height if not full viewport */
             padding-top: var(--header-height);
-            /* Sabit başlık için */
+            /* To account for fixed header */
             position: relative;
-            /* Z-endeks yığınlaması için gerekirse */
+            /* For z-index stacking if needed */
             overflow: hidden;
-            /* İçerik taşabilirse */
+            /* If content might overflow */
         }
-
+    
         .hero-text {
             z-index: 10;
-            /* Diğer kahraman öğelerinin üzerinde olması gerekiyorsa */
+            /* If it needs to be above other hero elements */
             position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-
+    
         .hero-text h1 {
             font-family: 'Montserrat', Arial, sans-serif;
-            /* all.css ile eşleşmeli, Arial daha yakın bir yedek olarak */
+            /* Match all.css, Arial as closer fallback */
             font-weight: 300;
-            /* all.css ile eşleşmeli */
+            /* Match all.css */
             font-size: 4em;
-            /* all.css'den masaüstü varsayılanı */
+            /* Desktop default from all.css */
             line-height: 1.6;
-            /* all.css'den masaüstü varsayılanı */
+            /* Desktop default from all.css */
             min-height: 308px;
-            /* all.css'den 3 satır için masaüstü varsayılanı */
+            /* Desktop default for 3 lines from all.css */
             color: white;
             text-transform: uppercase;
             margin-bottom: 1rem;
-            /* text-shadow: 2px 2px 4px rgba(0,0,0,0.7); -- Ertele: performans yoğun olabilir */
+            /* text-shadow: 2px 2px 4px rgba(0,0,0,0.7); -- Defer: can be performance intensive */
         }
-
-        /* LCP Resim Stilleri */
+    
+        /* LCP Image Styles */
         .homePage-machine-desktop {
             display: none;
         }
-
-        /* Kritik CSS'de mobil cihazlarda varsayılan olarak gizlenir */
+    
+        /* Hidden on mobile by default in critical CSS */
         .homePage-machine-mobile {
             display: block;
-            /* Bu LCP öğesidir, görünür olduğundan emin olun */
+            /* This is the LCP element, ensure it's visible */
             max-width: 90%;
-            /* Veya mobil için all.css'den belirli bir genişlik */
+            /* Or specific width from all.css for mobile */
             height: auto;
-            /* En boy oranını koru */
+            /* Maintain aspect ratio */
             margin: 20px auto;
-            /* Ortalama ve boşluk */
-            /* filter: drop-shadow(...); -- Ertele: performans yoğun olabilir */
+            /* Centering and spacing */
+            /* filter: drop-shadow(...); -- Defer: can be performance intensive */
         }
-
-        /* CTA Düğmesi (ekranın üst kısmında görünürse) */
+    
+        /* CTA Button (if visible above the fold) */
         .cta-button {
             display: inline-block;
             font-family: 'Montserrat', Arial, sans-serif;
             font-weight: 200;
-            /* all.css ile eşleşmeli */
+            /* Match all.css */
             text-transform: uppercase;
-            background-color: transparent;
-            /* all.css'den */
+            /* From all.css */
             border: 2px solid var(--white);
-            /* all.css'den */
+            /* From all.css */
             color: var(--white);
             padding: 0.75rem 1.5rem;
-            /* all.css'den */
+            /* From all.css */
             text-decoration: none;
             letter-spacing: 0.05em;
-            /* all.css'den */
+            /* From all.css */
             margin-top: 1rem;
-            /* Resimden boşluk */
-            /* box-shadow: ...; -- Ertele: performans yoğun olabilir */
+            /* Spacing from image */
+            /* box-shadow: ...; -- Defer: can be performance intensive */
         }
-
-        /* Mobil Cihazlara Özel Geçersiz Kılmalar (bu öğeler için @media (max-width: 768px) bloğunuzla eşleşmeli) */
-        /* Bu blok, özellikle mobil cihazlar için stilleri iyileştirir veya geçersiz kılar, bunların öncelikli olduğundan emin olun */
+    
+        /* Mobile-specific Overrides (should match your @media (max-width: 768px) block for these elements) */
+        /* This block refines or overrides styles specifically for mobile, ensuring they take precedence */
         @media (max-width: 768px) {
             .hero-text h1 {
                 font-size: 2.5em;
-                /* bu kesme noktası için all.css'den */
+                /* from all.css for this breakpoint */
                 line-height: 1.4;
-                /* bu kesme noktası için all.css'den */
+                /* from all.css for this breakpoint */
                 min-height: 168px;
-                /* bu kesme noktası için all.css'den (2.5 * 16 * 1.4 * 3) */
+                /* from all.css for this breakpoint (2.5 * 16 * 1.4 * 3) */
             }
-
+    
             .header .container {
                 justify-content: center;
-                /* Mobil için all.css'e göre */
+                /* As per all.css for mobile */
                 padding: 0 1rem;
-                /* Örnek, all.css'inizden ayarlayın */
+                /* Example, adjust from your all.css */
             }
-
+    
             .logo-text {
                 font-size: 2rem;
-                /* Örnek, mobil değerler için all.css'i kontrol edin */
+                /* Example, check all.css for mobile values */
                 margin: 0;
-                /* Varsa masaüstü kenar boşluklarını sıfırla */
+                /* Reset desktop margins if any */
                 padding-left: 0;
-                /* Masaüstü dolgusunu sıfırla */
+                /* Reset desktop padding */
                 text-align: center;
-                /* Logo mobil cihazda ortalanmışsa */
+                /* If logo is centered on mobile */
             }
-
+    
             .mobile-menu-toggle {
                 display: block;
                 position: absolute;
-                /* Başlığa/kapsayıcıya göre konumlandırılmışsa */
+                /* If positioned relative to header/container */
                 left: 25px;
-                /* all.css'de görüldüğü gibi */
+                /* As seen in all.css */
                 top: 50%;
-                /* Dikey ortalama için */
+                /* For vertical centering */
                 transform: translateY(-50%);
-                /* Dikey ortalama için */
+                /* For vertical centering */
             }
-
-            /* Nav, all.css'de mobil için varsayılan olarak transform/opacity ile gizlenir, bu nedenle basit bir display:none tercih edilmedikçe .nav'ın kendisi için kritik stil yoktur. */
+    
+            /* Nav is hidden by default via transform/opacity in all.css for mobile, so no critical styles for .nav itself unless a basic display:none is preferred here for simplicity */
             /* .nav { display: none; } */
-            /* Tam nav stili ertelenirse transformdan daha basit */
-
+            /* Simpler than transform if full nav style deferred */
+    
             .hero-text h1 {
                 font-size: 2rem;
-                /* all.css'i kontrol edin: (max-width: 768px) -> .hero-text h1 */
+                /* Check all.css: (max-width: 768px) -> .hero-text h1 */
                 margin-bottom: 1.5rem;
-                /* all.css'i kontrol edin */
+                /* Check all.css */
             }
-
-            /* .homePage-machine-mobile stilleri mobil için yukarıda zaten tanımlanmıştır, doğru olduğundan emin olun */
-            /* .homePage-machine-desktop display: none; kalmalıdır; */
+    
+            /* .homePage-machine-mobile styles are already defined above for mobile, ensure they are correct */
+            /* .homePage-machine-desktop should remain display: none; */
         }
-
+    
         .pre-order-product-image {
             object-fit: cover;
-            /* Resmin en boy oranını korurken ayrılan alanı kaplamasını sağlar */
+            /* Ensures the image covers the allocated space while maintaining aspect ratio */
         }
-
+    
         .desktop-only-product-display .pre-order-product-image {
             width: 100%;
             height: auto;
@@ -300,32 +299,33 @@
             max-width: none;
             aspect-ratio: 1 / 1;
         }
-
+    
         .desktop-only-product-display .product-image-container {
-            width: 100%;
-            margin: 0 auto;
+            width: 130%;
             position: relative;
             overflow: visible;
+            margin-bottom: 100px;
+            margin-right: 200px;
         }
-
+    
         .mobile-only-product-display .product-image-container {
             width: 100%;
-            /* Tam genişliği sağlamak için %80'den değiştirildi */
-            margin: 0 auto;
-            /* Kapsayıcıyı ortala */
+            /* Changed from 80% to ensure full width */
+            /* Center the container */
             position: relative;
             overflow: visible;
-            /* Resmin kesilmediğinden emin olmak için varsayılandan değiştirildi */
+            margin-top: -120px
+                /* Changed from default to ensure image is not cut */
         }
-
+    
         .mobile-only-product-display .pre-order-product-image {
             height: auto;
             aspect-ratio: 1 / 1;
             object-fit: contain;
-            /* Tam resmin görünür olduğundan emin olmak için cover'dan değiştirildi */
+            /* Changed from cover to ensure full image is visible */
             display: block;
-            max-width: none;
-            /* Max-width kısıtlamasını kaldır */
+            max-width: 100%;
+            /* Remove max-width constraint */
         }
     </style>
 
