@@ -37,10 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
             circleId: 'circle-high-res',
             labelAnchor: 'right',
             desktop: {
-                x2: 470,
-                y2: 275,
-                cx: 470,
-                cy: 275
+                x2: 450,
+                y2: 300,
+                cx: 450,
+                cy: 300
             },
             mobile: {
                 x2: 780,

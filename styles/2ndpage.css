@@ -51,19 +51,25 @@ body {
   padding-bottom: 5vh;
   max-width: 1600px;
   align-items: center;
-  justify-content: center
+  justify-content: flex-start;
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+  width: 100%;
 }
 
 .product-container {
   width: 95%;
   max-width: 1000px;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  aspect-ratio: 1/1
+  aspect-ratio: 1/1;
+  margin-left: 0;
 }
 
 .product-svg {
-  width: 100%;
+  width: 130%;
   height: 100%;
   display: block;
   max-width: 100%;
@@ -91,7 +97,9 @@ body {
 
 .product-image-homepage {
   object-fit: contain;
-  display: block
+  display: block;
+  transform: translateX(-33%);
+  max-width: 100%;
 }
 
 .feature-label {
@@ -163,7 +171,7 @@ body {
 
 .high-res {
   left: 5.4%;
-  top: 24.7%
+  top: 27.4%
 }
 
 .forged-metal {
@@ -350,6 +358,16 @@ body {
     height: 16px;
     min-width: 16px;
   }
+
+  .product-image-homepage {
+    transform: translateX(-15%);
+  }
+
+  .product-container {
+    width: 100%;
+    margin: 0;
+    padding: 0 20px;
+  }
 }
 
 @media (max-width:1400px) {
@@ -520,6 +538,10 @@ body {
     background-color: rgba(41, 44, 56, .8);
     padding: 8px 50px;
     border-radius: 9999px
+  }
+
+  .product-image-homepage {
+    transform: translateX(-33%);
   }
 }
 
