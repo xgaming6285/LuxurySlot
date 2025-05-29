@@ -1936,7 +1936,7 @@ svg.product-svg {
     .homePage-machine-mobile {
         display: block;
         position: relative;
-        left: 50%;
+        left: 60%;
         transform: translateX(-50%);
         width: auto;
         max-width: 200%;
