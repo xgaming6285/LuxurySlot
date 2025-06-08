@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Game Providers - MyMiniSlot</title>
+    <meta name="description"
+        content="Discover the extensive collection of premium game providers available on MyMiniSlot. From Pragmatic Play to Evolution Gaming, experience the best slot games and casino entertainment.">
+    <link href="all.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600;700&family=Dancing+Script:wght@600&display=swap"
+        rel="stylesheet">
+    <link href="styles/footer.css" rel="stylesheet" media="print" onload="this.media='all'">
+
+    <style>
+        body {
+            background-color: rgba(30, 37, 47, 255) !important;
+            background-image: none !important;
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        .providers-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 120px 40px 60px;
+            flex: 1;
+        }
+
+        .providers-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .providers-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: rgb(167, 167, 167);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .providers-subtitle {
+            font-size: 1.2em;
+            line-height: 1.6;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .providers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .provider-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .provider-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .provider-card:hover::before {
+            left: 100%;
+        }
+
+        .provider-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .provider-logo {
+            width: 140px;
+            height: 100px;
+            object-fit: contain;
+            margin: 0 auto 25px;
+            filter: brightness(0.9) contrast(1.1);
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .provider-card:hover .provider-logo {
+            filter: brightness(1.1) contrast(1.2);
+            transform: scale(1.05);
+        }
+
+        .provider-logo-placeholder {
+            width: 120px;
+            height: 80px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #e0e0e0;
+            margin: 0 auto 20px;
+            font-size: 0.9em;
+        }
+
+        /* Special styling for logo-only cards */
+        .provider-card.logo-only {
+            padding: 40px 30px 30px;
+            min-height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .provider-card.logo-only .provider-logo {
+            margin-bottom: 30px;
+            flex-shrink: 0;
+        }
+
+        .provider-card.logo-only .provider-description {
+            margin-top: auto;
+            text-align: center;
+        }
+
+        .provider-name {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #e0e0e0;
+        }
+
+        .provider-description {
+            font-size: 0.95em;
+            line-height: 1.5;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        .featured-providers {
+            margin-bottom: 60px;
+        }
+
+        .featured-title {
+            font-size: 2.2em;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 40px;
+            color: rgb(167, 167, 167);
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .featured-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-card .provider-logo {
+            width: 160px;
+            height: 110px;
+            margin: 0 auto 30px;
+            display: block;
+        }
+
+        .featured-card .provider-name {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .featured-card.logo-only {
+            padding: 50px 40px 40px;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .featured-card.logo-only .provider-logo {
+            margin-bottom: 35px;
+            flex-shrink: 0;
+        }
+
+        .featured-card.logo-only .provider-description {
+            margin-top: auto;
+            text-align: center;
+            font-size: 1.05em;
+        }
+
+        .stats-section {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 60px 0;
+            margin: 80px 0;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 3em;
+            font-weight: 700;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1em;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .nav-indicator {
+            position: absolute;
+            bottom: -18%;
+            height: 2px;
+            background-color: white;
+            opacity: 1;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.5);
+            width: 220px !important;
+            left: 70px;
+        }
+
+        @media (max-width: 1200px) {
+            .providers-title {
+                font-size: 2.8em;
+            }
+
+            .providers-container {
+                padding: 100px 30px 50px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .providers-container {
+                padding: 100px 20px 40px;
+            }
+
+            .providers-title {
+                font-size: 2.2em;
+            }
+
+            .providers-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .featured-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .provider-card,
+            .featured-card {
+                padding: 25px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .stat-number {
+                font-size: 2.2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .providers-title {
+                font-size: 1.8em;
+            }
+
+            .providers-subtitle {
+                font-size: 1em;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu-blur-overlay">
+    </div>
+    <header class="header" id="main-header">
+        <div class="container">
+            <div class="logo-text">
+                MyMiniSlot
+            </div>
+            <nav class="nav" id="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link" data-section="home" href="/">
+                            HOME
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-section="about" href="/about-us">
+                            ABOUT
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-section="game-providers" href="/game-providers">
+                            GAME PROVIDERS
+                        </a>
+                        <div class="nav-indicator"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-section="support" href="/support">
+                            SUPPORT
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <button aria-label="Toggle mobile menu" class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span class="hamburger">
+                </span>
+            </button>
+            <div class="header-line">
+            </div>
+        </div>
+    </header>
+
+    <main class="providers-container">
+        <div class="providers-header">
+            <h1 class="providers-title">Game Providers</h1>
+            <p class="providers-subtitle">
+                Experience the finest gaming content from the world's leading software providers.
+                Our carefully curated selection ensures premium entertainment with cutting-edge graphics,
+                innovative features, and fair gameplay.
+            </p>
+        </div>
+
+        <section class="featured-providers">
+            <h2 class="featured-title">Featured Partners</h2>
+            <div class="featured-grid">
+                <div class="featured-card logo-only">
+                    <img src="image/pragmatic.webp" alt="Pragmatic Play" class="provider-logo">
+                    <p class="provider-description">
+                        A leading content provider for the iGaming industry, offering multi-award-winning slots,
+                        live casino, bingo, virtual sports, and more across all platforms.
+                    </p>
+                </div>
+                <div class="featured-card logo-only">
+                    <img src="image/evolution.png" alt="Evolution Gaming" class="provider-logo">
+                    <p class="provider-description">
+                        The world's leading live casino provider, delivering premium live dealer games
+                        with cutting-edge technology and exceptional user experience.
+                    </p>
+                </div>
+                <div class="featured-card logo-only">
+                    <img src="image/netEnt.png" alt="NetEnt" class="provider-logo">
+                    <p class="provider-description">
+                        Pioneers in the online gaming industry, creating premium digital entertainment
+                        experiences with innovative slot games and mobile gaming solutions.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Premium Providers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">Quality Games</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Entertainment</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Fair Play</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="all-providers">
+            <h2 class="featured-title">All Game Providers</h2>
+            <div class="providers-grid">
+                <div class="provider-card">
+                    <div class="provider-logo-placeholder">AleaPlay</div>
+                    <h3 class="provider-name">AleaPlay - Felix Gaming</h3>
+                    <p class="provider-description">Cutting-edge gaming technology delivering exceptional player experiences.</p>
+                </div>
+                <div class="provider-card logo-only">
+                    <img src="image/amusnet.webp" alt="Amusnet" class="provider-logo">
+                    <p class="provider-description">Innovative gaming solutions with engaging slot games and casino content.</p>
+                </div>
+                <div class="provider-card">
+                    <div class="provider-logo-placeholder">B-Gaming</div>
+                    <h3 class="provider-name">B-Gaming</h3>
+                    <p class="provider-description">High-quality slots and table games with innovative mechanics and features.</p>
+                </div>
+                <div class="provider-card">
+                    <div class="provider-logo-placeholder">Caleta</div>
+                    <h3 class="provider-name">Caleta</h3>
+                    <p class="provider-description">Creative gaming solutions with unique themes and engaging gameplay.</p>
+                </div>
+                <div class="provider-card logo-only">
+                    <img src="image/igt.png" alt="EGT" class="provider-logo">
+                    <p class="provider-description">European Gaming Technology delivering premium casino gaming solutions.</p>
+                </div>
+                <div class="provider-card">
+                    <div class="provider-logo-placeholder">Endorphina</div>
+                    <h3 class="provider-name">Endorphina</h3>
+                    <p class="provider-description">Unique slot games with distinctive art styles and engaging features.</p>
+                </div>
+                <div class="provider-card">
+                    <div class="provider-logo-placeholder">Evoplay</div>
+                    <h3 class="provider-name">Evoplay</h3>
+                    <p class="provider-description">Next-generation gaming experiences with 3D slots and instant games.</p>
+                </div>
+                <div class="provider-card">
+                    <div class="provider-logo-placeholder">Gamzix</div>
+                    <h3 class="provider-name">Gamzix</h3>
+                    <p class="provider-description">Innovative gaming content with modern mechanics and mobile optimization.</p>
+                </div>
+                <div class="provider-card">
+                    <div class="provider-logo-placeholder">Golden Race</div>
+                    <h3 class="provider-name">Golden Race</h3>
+                    <p class="provider-description">Virtual sports and racing games with realistic graphics and betting options.</p>
+                </div>
+                <div class="provider-card">
+                    <div class="provider-logo-placeholder">Habanero</div>
+                    <h3 class="provider-name">Habanero</h3>
+                    <p class="provider-description">Premium slot games with Asian themes and innovative bonus features.</p>
+                </div>
+                <div class="provider-card logo-only">
+                    <img src="image/hacksaw.webp" alt="Hacksaw Gaming" class="provider-logo">
+                    <p class="provider-description">Modern slot games with unique mechanics and high-energy gameplay.</p>
+                </div>
+                <div class="provider-card">
+                    <div class="provider-logo-placeholder">Kalamba</div>
+                    <h3 class="provider-name">Kalamba</h3>
+                    <p class="provider-description">Innovative slot games with unique features and engaging bonus rounds.</p>
+                </div>
+                <div class="provider-card">
+                    <div class="provider-logo-placeholder">Kiron</div>
+                    <h3 class="provider-name">Kiron</h3>
+                    <p class="provider-description">Virtual sports and numbers games with realistic simulations.</p>
+                </div>
+                <div class="provider-card">
+                    <div class="provider-logo-placeholder">Peter & Sons</div>
+                    <h3 class="provider-name">Peter & Sons</h3>
+                    <p class="provider-description">Creative slot games with storytelling elements and unique themes.</p>
+                </div>
+                <div class="provider-card logo-only">
+                    <img src="image/playTech.png" alt="Playson" class="provider-logo">
+                    <p class="provider-description">High-quality gaming content with innovative features and engaging gameplay.</p>
+                </div>
+                <div class="provider-card logo-only">
+                    <img src="image/pragmatic.webp" alt="Pragmatic Play RNG" class="provider-logo">
+                    <p class="provider-description">Random Number Generator slots with proven fairness and exciting features.</p>
+                </div>
+                <div class="provider-card">
+                    <div class="provider-logo-placeholder">Quickspin</div>
+                    <h3 class="provider-name">Quickspin</h3>
+                    <p class="provider-description">Premium slot games with superior graphics and innovative gameplay mechanics.</p>
+                </div>
+                <div class="provider-card">
+                    <div class="provider-logo-placeholder">Redrake</div>
+                    <h3 class="provider-name">Redrake</h3>
+                    <p class="provider-description">Dynamic gaming content with engaging themes and bonus features.</p>
+                </div>
+                <div class="provider-card">
+                    <div class="provider-logo-placeholder">SlotMatrix</div>
+                    <h3 class="provider-name">SlotMatrix Exclusive</h3>
+                    <p class="provider-description">Exclusive gaming content with premium features and unique gameplay.</p>
+                </div>
+                <div class="provider-card">
+                    <div class="provider-logo-placeholder">Spinomenal</div>
+                    <h3 class="provider-name">Spinomenal</h3>
+                    <p class="provider-description">Innovative slot games with diverse themes and engaging bonus mechanics.</p>
+                </div>
+                <div class="provider-card">
+                    <div class="provider-logo-placeholder">Spribe</div>
+                    <h3 class="provider-name">Spribe</h3>
+                    <p class="provider-description">Next-generation gaming experiences with crash games and innovative mechanics.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <a href="about-us.html">
+                        About us
+                    </a>
+                    <a href="/blog">
+                        Blog
+                    </a>
+                    <a href="support.html">
+                        Support
+                    </a>
+                </div>
+                <div class="footer-column">
+                    <a href="cookie-policy.html">
+                        Cookie Policy
+                    </a>
+                    <a href="privacy-policy.html">
+                        Privacy Policy
+                    </a>
+                    <a href="responsible-gambling.html">
+                        Responsible Gambling
+                    </a>
+                </div>
+                <div class="footer-column">
+                    <a href="image/Technical Manual - Mini Kiosk_V2 - Copy.pdf" download="MyMiniSlot_Technical_Manual.pdf">
+                        Tech Specs
+                    </a>
+                    <a href="/commissions">
+                        Commissions
+                    </a>
+                    <a href="/game-providers">
+                        Game Providers
+                    </a>
+                </div>
+                <div class="footer-column language-and-social-group">
+                    <div class="language-selector">
+                        <img alt="UK Flag" class="uk-flag" id="footer-flag" src="image/Flag_of_UK.svg" width="30"
+                            height="20">
+                        <span class="flag-label" id="footer-flag-label">
+                            English
+                        </span>
+                        <select class="footer-language-dropdown" id="footer-language-dropdown"
+                            aria-label="Select language">
+                            <option data-flag="image/Flag_of_UK.svg" value="en">
+                                English
+                            </option>
+                            <option data-flag="image/Flag_of_Bulgaria.svg" value="bg">
+                                Български
+                            </option>
+                            <option data-flag="image/Flag_of_Germany.svg" value="de">
+                                Deutsch
+                            </option>
+                            <option data-flag="image/Flag_of_France.svg" value="fr">
+                                Français
+                            </option>
+                            <option data-flag="image/Flag_of_Spain.svg" value="es">
+                                Español
+                            </option>
+                            <option data-flag="image/Flag_of_Italy.svg" value="it">
+                                Italiano
+                            </option>
+                            <option data-flag="image/Flag_of_Russia.svg" value="ru">
+                                Русский
+                            </option>
+                            <option data-flag="image/Flag_of_Turkey.svg" value="tr">
+                                Türkçe
+                            </option>
+                            <option data-flag="image/Flag_of_India.svg" value="in">
+                                भारतीय
+                            </option>
+                        </select>
+                    </div>
+                    <div class="social-icons-inline-container">
+                        <a href="https://x.com" aria-label="MyMiniSlot on Twitter X">
+                            <img alt="Twitter X social media icon" class="footer-social-img" src="image/Home (15).webp"
+                                width="24" height="24">
+                        </a>
+                        <a href="https://www.instagram.com" aria-label="MyMiniSlot on Instagram">
+                            <img alt="Instagram social media icon" class="footer-social-img" src="image/Home (16).webp"
+                                width="24" height="24">
+                        </a>
+                        <a href="https://www.facebook.com" aria-label="MyMiniSlot on Facebook">
+                            <img alt="Facebook social media icon" class="footer-social-img" src="image/Home (17).webp"
+                                width="24" height="24">
+                        </a>
+                        <a href="https://www.tiktok.com" aria-label="MyMiniSlot on TikTok">
+                            <img alt="TikTok social media icon" class="footer-social-img" src="image/Home (18).webp"
+                                width="24" height="24">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-divider">
+        </div>
+        <div class="crypto-logos">
+            <img alt="Accepted Cryptocurrencies for MyMiniSlot" class="crypto-image"
+                src="image/footer-credits-removebg-preview.webp">
+        </div>
+        <footer class="site-footer-mobile">
+            <img alt="Accepted Cryptocurrencies and Responsible Gambling information for mobile"
+                class="mobile-footer-img" src="image/mobile-footer.webp">
+        </footer>
+        <div class="footer-divider">
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-logo">
+                <div class="logo-text-footer">
+                    MyMiniSlot
+                </div>
+            </div>
+            <div class="copyright">
+                MyMiniSlot © 2025
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/header.js" defer></script>
+    <script src="js/language-selector.js" defer></script>
+</body>
+
+</html>
