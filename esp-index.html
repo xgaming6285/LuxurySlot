@@ -29,7 +29,7 @@
             width: 100%;
             position: relative;
         }
-    
+
         body {
             font-family: 'Montserrat', sans-serif;
             /* Fallback font will be used initially */
@@ -46,7 +46,7 @@
             min-height: 100vh;
             font-weight: 200;
         }
-    
+
         :root {
             --header-height: 80px;
             --black: #000;
@@ -59,18 +59,18 @@
             --gray-800: #262626;
             --transition-timing: cubic-bezier(0.25, 0.1, 0.25, 1);
         }
-    
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-    
+
         html {
             scroll-padding-top: var(--header-height);
             /* Smooth scroll is JS/user preference, not critical for paint */
         }
-    
+
         /* Header */
         .header {
             position: fixed;
@@ -85,7 +85,7 @@
             contain: layout style;
             /* Good for performance */
         }
-    
+
         .header .container {
             display: flex;
             align-items: center;
@@ -97,7 +97,7 @@
             max-width: 100%;
             /* justify-content: space-between; -- Overridden by mobile */
         }
-    
+
         .logo-text {
             font-family: 'Dancing Script', 'cursive';
             font-weight: 600;
@@ -107,7 +107,7 @@
             flex-shrink: 0;
             /* margin/padding will be set in mobile specific */
         }
-    
+
         .mobile-menu-toggle {
             display: none;
             /* Default, shown in mobile @media */
@@ -119,7 +119,7 @@
             z-index: 501;
             /* Ensure it's above other header content if necessary */
         }
-    
+
         .hamburger {
             display: block;
             position: relative;
@@ -127,7 +127,7 @@
             height: 2px;
             background-color: var(--white);
         }
-    
+
         .hamburger::before,
         .hamburger::after {
             content: '';
@@ -136,17 +136,17 @@
             height: 2px;
             background-color: var(--white);
         }
-    
+
         .hamburger::before {
             top: -6px;
             right: 0px;
         }
-    
+
         .hamburger::after {
             bottom: -6px;
             right: 0px;
         }
-    
+
         /* Hero Section (LCP Container) */
         .hero-section {
             display: flex;
@@ -163,7 +163,7 @@
             overflow: hidden;
             /* If content might overflow */
         }
-    
+
         .hero-text {
             z-index: 10;
             /* If it needs to be above other hero elements */
@@ -172,7 +172,7 @@
             flex-direction: column;
             align-items: center;
         }
-    
+
         .hero-text h1 {
             font-family: 'Montserrat', Arial, sans-serif;
             /* Match all.css, Arial as closer fallback */
@@ -189,12 +189,12 @@
             margin-bottom: 1rem;
             /* text-shadow: 2px 2px 4px rgba(0,0,0,0.7); -- Defer: can be performance intensive */
         }
-    
+
         /* LCP Image Styles */
         .homePage-machine-desktop {
             display: none;
         }
-    
+
         /* Hidden on mobile by default in critical CSS */
         .homePage-machine-mobile {
             display: block;
@@ -207,7 +207,7 @@
             /* Centering and spacing */
             /* filter: drop-shadow(...); -- Defer: can be performance intensive */
         }
-    
+
         /* CTA Button (if visible above the fold) */
         .cta-button {
             display: inline-block;
@@ -228,7 +228,7 @@
             /* Spacing from image */
             /* box-shadow: ...; -- Defer: can be performance intensive */
         }
-    
+
         /* Mobile-specific Overrides (should match your @media (max-width: 768px) block for these elements) */
         /* This block refines or overrides styles specifically for mobile, ensuring they take precedence */
         @media (max-width: 768px) {
@@ -240,14 +240,14 @@
                 min-height: 168px;
                 /* from all.css for this breakpoint (2.5 * 16 * 1.4 * 3) */
             }
-    
+
             .header .container {
                 justify-content: center;
                 /* As per all.css for mobile */
                 padding: 0 1rem;
                 /* Example, adjust from your all.css */
             }
-    
+
             .logo-text {
                 font-size: 2rem;
                 /* Example, check all.css for mobile values */
@@ -258,7 +258,7 @@
                 text-align: center;
                 /* If logo is centered on mobile */
             }
-    
+
             .mobile-menu-toggle {
                 display: block;
                 position: absolute;
@@ -270,27 +270,27 @@
                 transform: translateY(-50%);
                 /* For vertical centering */
             }
-    
+
             /* Nav is hidden by default via transform/opacity in all.css for mobile, so no critical styles for .nav itself unless a basic display:none is preferred here for simplicity */
             /* .nav { display: none; } */
             /* Simpler than transform if full nav style deferred */
-    
+
             .hero-text h1 {
                 font-size: 2rem;
                 /* Check all.css: (max-width: 768px) -> .hero-text h1 */
                 margin-bottom: 1.5rem;
                 /* Check all.css */
             }
-    
+
             /* .homePage-machine-mobile styles are already defined above for mobile, ensure they are correct */
             /* .homePage-machine-desktop should remain display: none; */
         }
-    
+
         .pre-order-product-image {
             object-fit: cover;
             /* Ensures the image covers the allocated space while maintaining aspect ratio */
         }
-    
+
         .desktop-only-product-display .pre-order-product-image {
             width: 100%;
             height: auto;
@@ -299,7 +299,7 @@
             max-width: none;
             aspect-ratio: 1 / 1;
         }
-    
+
         .desktop-only-product-display .product-image-container {
             width: 130%;
             position: relative;
@@ -307,7 +307,7 @@
             margin-bottom: 100px;
             margin-right: 200px;
         }
-    
+
         .mobile-only-product-display .product-image-container {
             width: 100%;
             /* Changed from 80% to ensure full width */
@@ -317,7 +317,7 @@
             margin-top: -120px
                 /* Changed from default to ensure image is not cut */
         }
-    
+
         .mobile-only-product-display .pre-order-product-image {
             height: auto;
             aspect-ratio: 1 / 1;
@@ -688,7 +688,7 @@
                     </a>
                 </div>
                 <div class="footer-column">
-                    <a href="/tech-specs">
+                    <a href="image/Technical Manual - Mini Kiosk_V2 - Copy.pdf" download="MyMiniSlot_Technical_Manual.pdf">
                         Especificaciones técnicas
                     </a>
                     <a href="/commissions">
@@ -952,7 +952,7 @@
                         handleDragStart(e.touches[0].clientX);
                         // For touch, e.preventDefault() might interfere with scrolling if not careful.
                         // Test if it's needed. If dragging also scrolls, then add it.
-                        // e.preventDefault(); 
+                        // e.preventDefault();
                     }
                 }, { passive: true }); // passive:true is generally good for touchstart for scroll performance
 
@@ -966,7 +966,7 @@
                     if (isDragging && e.touches.length > 0) {
                         handleDragMove(e.touches[0].clientX);
                         // If drag interaction is primary, you might want to prevent default scroll here
-                        // e.preventDefault(); 
+                        // e.preventDefault();
                     }
                 }, { passive: false }); // Set passive to false if you intend to call preventDefault
 

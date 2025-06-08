@@ -699,7 +699,7 @@
                     </a>
                 </div>
                 <div class="footer-column">
-                    <a href="/tech-specs">
+                    <a href="image/Technical Manual - Mini Kiosk_V2 - Copy.pdf" download="MyMiniSlot_Technical_Manual.pdf">
                         Tech Specs
                     </a>
                     <a href="/commissions">
@@ -964,7 +964,7 @@
                         handleDragStart(e.touches[0].clientX);
                         // For touch, e.preventDefault() might interfere with scrolling if not careful.
                         // Test if it's needed. If dragging also scrolls, then add it.
-                        // e.preventDefault(); 
+                        // e.preventDefault();
                     }
                 }, { passive: true }); // passive:true is generally good for touchstart for scroll performance
 
@@ -978,7 +978,7 @@
                     if (isDragging && e.touches.length > 0) {
                         handleDragMove(e.touches[0].clientX);
                         // If drag interaction is primary, you might want to prevent default scroll here
-                        // e.preventDefault(); 
+                        // e.preventDefault();
                     }
                 }, { passive: false }); // Set passive to false if you intend to call preventDefault
 

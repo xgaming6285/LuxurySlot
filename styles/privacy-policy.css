@@ -51,6 +51,7 @@ body.privacy-policy-page .privacy-policy-container {
     flex: 3;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 50px;
     position: relative;
     color: #fff
 }
@@ -61,7 +62,7 @@ body.privacy-policy-page .privacy-policy-container {
     top: 0;
     bottom: 0;
     left: 50%;
-    transform: translateX(-.5px);
+    transform: translateX(-1.5px);
     width: 3px;
     background-color: #fff
 }
@@ -72,11 +73,11 @@ body.privacy-policy-page .privacy-policy-container {
 }
 
 .text-columns .text-column:first-child {
-    padding-right: 22px
+    padding-right: 10px
 }
 
 .text-columns .text-column:last-child {
-    padding-left: 22px
+    padding-left: 10px
 }
 
 .text-column ol,
